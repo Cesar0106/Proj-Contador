@@ -10,11 +10,9 @@ entity Aula7 is
   port   (
     CLOCK_50 : in std_logic;
     KEY: in std_logic_vector(3 downto 0);
---    SW: in std_logic_vector(9 downto 0);
-   PC_OUT: out std_logic_vector(larguraEnderecos-1 downto 0);
-	palavra_controle: out std_logic_vector(11 downto 0);
-	LEDR  : out std_logic_vector(9 downto 0)
-	--LEDR  : out std_logic_vector(larguraDados-1 downto 0)
+	 SW : in std_logic_vector (9 downto 0);
+	 LEDR: out std_logic_vector (9 downto 0);
+	 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector (6 downto 0)
   );
 end entity;
 
@@ -22,9 +20,15 @@ end entity;
 architecture arquitetura of Aula7 is
   signal CLK : std_logic;
   signal saida_ROM : std_logic_vector (12 downto 0);
+  signal entra_ROM : std_logic_vector (8 downto 0);
   signal saida_RAM : std_logic_vector (7 downto 0);
-  signal instru : std_logic_vector (8 downto 0);
   signal habilita_ram: std_logic;
+  signal wr : std_logic;
+  signal rd : std_logic;
+  signal data_adr : std_logic_vector (8 downto 0);
+  signal saida_reg : std_logic_vector (7 downto 0);
+  signal saida_dec1 : std_logic_vector (7 downto 0);
+  signal hab_flag : std_logic;
   
   
   
@@ -44,30 +48,23 @@ end generate;
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 ROM1 : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
-          port map (Endereco => Endereco, Dado => instru);
+          port map (Endereco => entra_ROM, Dado => saida_ROM);
 			 
-DEC_INSTRUCAO : entity work.decoderInstru   generic map (larguraDados => larguraDados)
-          port map (opcode => instru(12 downto 9), saida => Sinais_Controle);
+DEC38 :  entity work.decoder3x8
+        port map( entrada => data_adr (8 downto 6), saida => saida_dec1);
 			 
-RAM1 : entity work.memoriaRAM   generic map (dataWidth => larguraDados, addrWidth => larguraEnderecos-1)
-          port map (addr => instru(5 downto 0), we => Sinais_Controle(0), re => Sinais_Controle(1), 
-			 habilita  => instru(8), dado_in => REG1_ULA_A, dado_out => saida_RAM, clk => CLK);
+RAM1 : entity work.memoriaRAM   generic map (dataWidth => 8, addrWidth => 6)
+          port map (addr => data_adr (5 downto 0), we => wr, re => rd, habilita  => saida_dec1(0), 
+			 dado_in => saida_reg, dado_out => saida_RAM, clk => CLK);
 			 
-CPU: entity work.CPU generic map (dataWidth => larguraDados, addrWidth => larguraEnderecos-1)
-			 port map (rd => RD
+CPU: entity work.CPU
+			 port map (WR => wr, RD => rd, rom_adr => entra_ROM, instru_in => saida_ROM, data_adr => data_adr,
+			 data_out=> saida_reg, data_in => saida_RAM);
 
 
-habEscritaMEM <= Sinais_Controle(0);
-habLeituraMEM <= Sinais_Controle(1);
-hab_flag <= Sinais_Controle(2);
-Operacao_ULA <= Sinais_Controle(4 downto 3);
-Habilita_A <= Sinais_Controle(5);
-selMUX <= Sinais_Controle(6);
-JEQ <= Sinais_Controle(7);
-JSR <= Sinais_Controle(8);
-RET <= Sinais_Controle(9);
-JMP <= Sinais_Controle(10);
-habEscritaRetorno <= Sinais_Controle(11);
+FF1 : entity work.flipflop port map (DIN => dado_, DOUT => saida_flag, ENABLE => hab_flag, CLK => CLK);
+
+FF2 : entity work.flipflop port map (DIN => zero_flag, DOUT => saida_flag, ENABLE => hab_flag, CLK => CLK);
 
 
 
@@ -86,8 +83,5 @@ habEscritaRetorno <= Sinais_Controle(11);
 
 --LEDR(7 downto 0) <= REG1_ULA_A;
 --LEDR(9 downto 8) <= Operacao_ULA;
-palavra_controle <= Sinais_Controle;
-
-PC_OUT <= Endereco;
 
 end architecture;
