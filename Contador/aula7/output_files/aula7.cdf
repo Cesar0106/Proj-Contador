@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEBA4F23) Path("C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-contador/Proj-Contador/Contador/output_files/") File("aula7.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("C:/Users/nishi/OneDrive/Documentos/DESCOMP/Nova pasta/Proj-Contador/Contador/aula7/output_files/") File("aula7.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

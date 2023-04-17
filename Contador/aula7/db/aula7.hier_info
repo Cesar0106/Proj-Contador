@@ -1,6 +1,7 @@
 |aula7
 CLOCK_50 => ~NO_FANOUT~
 KEY[0] => memoriaram:RAM1.clk
+KEY[0] => cpu:CPU.clock
 KEY[0] => flipflop:FF1.CLK
 KEY[0] => flipflop:FF2.CLK
 KEY[0] => registradorgenerico:REG8.CLK
@@ -27,48 +28,13 @@ LEDR[6] <= registradorgenerico:REG8.DOUT[6]
 LEDR[7] <= registradorgenerico:REG8.DOUT[7]
 LEDR[8] <= flipflop:FF2.DOUT
 LEDR[9] <= flipflop:FF1.DOUT
-HEX0[0] <= HEX0[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[1] <= HEX0[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[2] <= HEX0[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[3] <= HEX0[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[4] <= HEX0[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[5] <= HEX0[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[6] <= HEX0[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[0] <= HEX1[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[1] <= HEX1[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[2] <= HEX1[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[3] <= HEX1[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[4] <= HEX1[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[5] <= HEX1[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX1[6] <= HEX1[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[0] <= HEX2[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[1] <= HEX2[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[2] <= HEX2[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[3] <= HEX2[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[4] <= HEX2[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[5] <= HEX2[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX2[6] <= HEX2[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[0] <= HEX3[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[1] <= HEX3[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[2] <= HEX3[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[3] <= HEX3[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[4] <= HEX3[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[5] <= HEX3[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX3[6] <= HEX3[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-HEX4[1] <= HEX4[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[2] <= HEX4[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[3] <= HEX4[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[4] <= HEX4[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[5] <= HEX4[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX4[6] <= HEX4[6].DB_MAX_OUTPUT_PORT_TYPE
-HEX5[0] <= conversorhex7seg:display5.saida7seg[0]
-HEX5[1] <= conversorhex7seg:display5.saida7seg[1]
-HEX5[2] <= conversorhex7seg:display5.saida7seg[2]
-HEX5[3] <= conversorhex7seg:display5.saida7seg[3]
-HEX5[4] <= conversorhex7seg:display5.saida7seg[4]
-HEX5[5] <= conversorhex7seg:display5.saida7seg[5]
-HEX5[6] <= conversorhex7seg:display5.saida7seg[6]
+HEX0[0] <= conversorhex7seg:display0.saida7seg[0]
+HEX0[1] <= conversorhex7seg:display0.saida7seg[1]
+HEX0[2] <= conversorhex7seg:display0.saida7seg[2]
+HEX0[3] <= conversorhex7seg:display0.saida7seg[3]
+HEX0[4] <= conversorhex7seg:display0.saida7seg[4]
+HEX0[5] <= conversorhex7seg:display0.saida7seg[5]
+HEX0[6] <= conversorhex7seg:display0.saida7seg[6]
 
 
 |aula7|memoriaROM:ROM1
@@ -298,6 +264,10 @@ data_in[4] => muxgenerico2x1:MUX_Entrada_ULA_B.entradaA_MUX[4]
 data_in[5] => muxgenerico2x1:MUX_Entrada_ULA_B.entradaA_MUX[5]
 data_in[6] => muxgenerico2x1:MUX_Entrada_ULA_B.entradaA_MUX[6]
 data_in[7] => muxgenerico2x1:MUX_Entrada_ULA_B.entradaA_MUX[7]
+clock => registradorgenerico:REGA.CLK
+clock => registradorgenerico:PC.CLK
+clock => flipflop:FLAG_IGUAL.CLK
+clock => registradorgenerico:REG_RETORNO.CLK
 
 
 |aula7|CPU:CPU|muxGenerico2x1:MUX_Entrada_ULA_B
@@ -740,7 +710,7 @@ RST => DOUT[6]~reg0.ACLR
 RST => DOUT[7]~reg0.ACLR
 
 
-|aula7|conversorHex7Seg:display5
+|aula7|conversorHex7Seg:display0
 dadoHex[0] => Equal0.IN3
 dadoHex[0] => Equal1.IN0
 dadoHex[0] => Equal2.IN3

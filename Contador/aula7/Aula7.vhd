@@ -12,7 +12,7 @@ entity Aula7 is
     KEY: in std_logic_vector(3 downto 0);
 	 SW : in std_logic_vector (9 downto 0);
 	 LEDR: out std_logic_vector (9 downto 0);
-	 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector (6 downto 0)
+	 HEX0: out std_logic_vector (6 downto 0)
   );
 end entity;
 
@@ -36,7 +36,7 @@ architecture arquitetura of Aula7 is
   signal hab_ff2 : std_logic;
   signal saida_reg8 : std_logic_vector (7 downto 0);
   signal hab_reg8 : std_logic;
-  signal pcTeste: std_logic_vector(6 downto 0);
+  signal conta: std_logic_vector(6 downto 0);
   
 begin
 
@@ -68,7 +68,7 @@ RAM1 : entity work.memoriaRAM   generic map (dataWidth => 8, addrWidth => 6)
 			 
 CPU: entity work.CPU
 			 port map (WR => wr, RD => rd, rom_adr => entra_ROM, instru_in => saida_ROM, data_adr => data_adr,
-			 data_out=> saida_reg, data_in => saida_RAM);
+			 data_out=> saida_reg, data_in => saida_RAM, clock => CLK);
 
 
 FF1 : entity work.flipflop port map (DIN => saida_reg(0), DOUT => saida_ff1, ENABLE => hab_ff1, CLK => CLK);
@@ -79,14 +79,14 @@ REG8 : entity work.registradorGenerico  generic map (larguraDados => 8)
           port map (DIN => saida_reg(7 downto 0), DOUT => saida_reg8, ENABLE => hab_reg8, CLK => CLK, RST => '0');
 
 			 
-display5 :  entity work.conversorHex7Seg
+display0 :  entity work.conversorHex7Seg
         port map(dadoHex => entra_ROM(3 downto 0),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
-                 saida7seg => pcTeste);			 
+                 saida7seg => conta);			 
 
-HEX5 <= pcTeste;
+HEX0 <= conta;
 
 -- I/O
 --chavesY_MUX_A <= SW(3 downto 0);

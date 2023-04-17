@@ -10,7 +10,8 @@ entity CPU is
 	 instru_in: in std_logic_vector(12 downto 0);
     data_adr: out std_logic_vector(8 downto 0);
 	 data_out: out std_logic_vector(7 downto 0);
-	 data_in: in std_logic_vector(7 downto 0)
+	 data_in: in std_logic_vector(7 downto 0);
+	 clock: in std_logic
   );
 end entity;
 
@@ -56,7 +57,7 @@ signal saida_MUX_ULA_B : std_logic_vector (7 downto 0);
 begin
 
 -- Instanciando os componentes:
-
+CLK <= clock;
 -- Para simular, fica mais simples tirar o edgeDetector
 
 
