@@ -13,7 +13,7 @@ entity Aula8 is
 	 SW : in std_logic_vector (9 downto 0);
 	 LEDR: out std_logic_vector (9 downto 0);
 	 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector (6 downto 0);
-	 FPGA_RESET: in std_logic
+	 FPGA_RESET_N: in std_logic
   );
 end entity;
 
@@ -62,7 +62,7 @@ begin
 
 -- Para simular, fica mais simples tirar o edgeDetector
 gravar:  if simulacao generate
-CLK <= KEY(0);
+CLK <= CLOCK_50;
 else generate
 detectorSub0: work.edgeDetector(bordaSubida)
         port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
@@ -129,7 +129,7 @@ key3: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & KEY(3), habilita => hab_key3, saida => saida_RAM);	
 		
 key_reset: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & FPGA_RESET, habilita => hab_reset, saida => saida_RAM);	
+            port map (entrada => "0000000" & FPGA_RESET_N, habilita => hab_reset, saida => saida_RAM);	
 		
 
 
