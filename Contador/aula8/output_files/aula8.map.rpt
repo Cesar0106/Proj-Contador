@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Tue Apr 18 22:57:53 2023
+Wed Apr 19 09:03:37 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,28 +37,35 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  29. Parameter Settings for User Entity Instance: display:display|registradorGenerico:REG3
  30. Parameter Settings for User Entity Instance: display:display|registradorGenerico:REG4
  31. Parameter Settings for User Entity Instance: display:display|registradorGenerico:REG5
- 32. Port Connectivity Checks: "display:display|conversorHex7Seg:display5"
- 33. Port Connectivity Checks: "display:display|registradorGenerico:REG5"
- 34. Port Connectivity Checks: "display:display|conversorHex7Seg:display4"
- 35. Port Connectivity Checks: "display:display|registradorGenerico:REG4"
- 36. Port Connectivity Checks: "display:display|conversorHex7Seg:display3"
- 37. Port Connectivity Checks: "display:display|registradorGenerico:REG3"
- 38. Port Connectivity Checks: "display:display|conversorHex7Seg:display2"
- 39. Port Connectivity Checks: "display:display|registradorGenerico:REG2"
- 40. Port Connectivity Checks: "display:display|conversorHex7Seg:display1"
- 41. Port Connectivity Checks: "display:display|registradorGenerico:REG1"
- 42. Port Connectivity Checks: "display:display|conversorHex7Seg:display0"
- 43. Port Connectivity Checks: "display:display|registradorGenerico:REG0"
- 44. Port Connectivity Checks: "registradorGenerico:REG8"
- 45. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_RETORNO"
- 46. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_PC"
- 47. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 48. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
- 49. Port Connectivity Checks: "decoder3x8:DEC2"
- 50. Port Connectivity Checks: "decoder3x8:DEC1"
- 51. Post-Synthesis Netlist Statistics for Top Partition
- 52. Elapsed Time Per Partition
- 53. Analysis & Synthesis Messages
+ 32. Port Connectivity Checks: "buffer_3_state_8portas:key_reset"
+ 33. Port Connectivity Checks: "buffer_3_state_8portas:key3"
+ 34. Port Connectivity Checks: "buffer_3_state_8portas:key2"
+ 35. Port Connectivity Checks: "buffer_3_state_8portas:key1"
+ 36. Port Connectivity Checks: "buffer_3_state_8portas:key0"
+ 37. Port Connectivity Checks: "buffer_3_state_8portas:sw9"
+ 38. Port Connectivity Checks: "buffer_3_state_8portas:sw8"
+ 39. Port Connectivity Checks: "display:display|conversorHex7Seg:display5"
+ 40. Port Connectivity Checks: "display:display|registradorGenerico:REG5"
+ 41. Port Connectivity Checks: "display:display|conversorHex7Seg:display4"
+ 42. Port Connectivity Checks: "display:display|registradorGenerico:REG4"
+ 43. Port Connectivity Checks: "display:display|conversorHex7Seg:display3"
+ 44. Port Connectivity Checks: "display:display|registradorGenerico:REG3"
+ 45. Port Connectivity Checks: "display:display|conversorHex7Seg:display2"
+ 46. Port Connectivity Checks: "display:display|registradorGenerico:REG2"
+ 47. Port Connectivity Checks: "display:display|conversorHex7Seg:display1"
+ 48. Port Connectivity Checks: "display:display|registradorGenerico:REG1"
+ 49. Port Connectivity Checks: "display:display|conversorHex7Seg:display0"
+ 50. Port Connectivity Checks: "display:display|registradorGenerico:REG0"
+ 51. Port Connectivity Checks: "registradorGenerico:REG8"
+ 52. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REG_RETORNO"
+ 53. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_PC"
+ 54. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 55. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
+ 56. Port Connectivity Checks: "decoder3x8:DEC2"
+ 57. Port Connectivity Checks: "decoder3x8:DEC1"
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
 
 
 
@@ -85,14 +92,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 18 22:57:53 2023       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 19 09:03:37 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; Aula8                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 69                                          ;
-; Total pins                      ; 67                                          ;
+; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -210,27 +217,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/conversorHex7Seg.vhd    ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/ULASomaSub.vhd          ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/somaConstante.vhd       ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/registradorGenerico.vhd ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd      ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd      ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaROM.vhd          ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd          ;         ;
-; logicoDesvio.vhd                 ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/logicoDesvio.vhd        ;         ;
-; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/flipflop.vhd            ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/decoderInstru.vhd       ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/decoder3x8.vhd          ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd                 ;         ;
-; Aula8.vhd                        ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd               ;         ;
-; display.vhd                      ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd             ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/conversorHex7Seg.vhd       ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/ULASomaSub.vhd             ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/somaConstante.vhd          ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/registradorGenerico.vhd    ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd         ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd         ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaROM.vhd             ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd             ;         ;
+; logicoDesvio.vhd                 ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/logicoDesvio.vhd           ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/flipflop.vhd               ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/decoderInstru.vhd          ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/decoder3x8.vhd             ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd                    ;         ;
+; Aula8.vhd                        ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd                  ;         ;
+; display.vhd                      ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd                ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/buffer_3_state_8portas.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -238,25 +246,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 71           ;
+; Estimate of Logic utilization (ALMs needed) ; 75           ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 112          ;
+; Combinational ALUT usage for logic          ; 119          ;
 ;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 15           ;
-;     -- 5 input functions                    ; 14           ;
-;     -- 4 input functions                    ; 69           ;
-;     -- <=3 input functions                  ; 14           ;
+;     -- 6 input functions                    ; 17           ;
+;     -- 5 input functions                    ; 10           ;
+;     -- 4 input functions                    ; 77           ;
+;     -- <=3 input functions                  ; 15           ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 69           ;
 ;                                             ;              ;
-; I/O pins                                    ; 67           ;
+; I/O pins                                    ; 68           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 69           ;
-; Total fan-out                               ; 799          ;
-; Average fan-out                             ; 2.54         ;
+; Total fan-out                               ; 827          ;
+; Average fan-out                             ; 2.55         ;
 +---------------------------------------------+--------------+
 
 
@@ -265,11 +273,11 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name         ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------------+--------------+
-; |Aula8                                   ; 112 (1)             ; 69 (0)                    ; 0                 ; 0          ; 67   ; 0            ; |Aula8                                           ; Aula8               ; work         ;
+; |Aula8                                   ; 119 (4)             ; 69 (0)                    ; 0                 ; 0          ; 68   ; 0            ; |Aula8                                           ; Aula8               ; work         ;
 ;    |CPU:CPU|                             ; 23 (0)              ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU                                   ; CPU                 ; work         ;
 ;       |ULASomaSub:ULA1|                  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|ULASomaSub:ULA1                   ; ULASomaSub          ; work         ;
-;       |decoderInstru:DEC_INSTRUCAO|      ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|decoderInstru:DEC_INSTRUCAO       ; decoderInstru       ; work         ;
-;       |muxGenerico2x1:MUX_Entrada_ULA_B| ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|muxGenerico2x1:MUX_Entrada_ULA_B  ; muxGenerico2x1      ; work         ;
+;       |decoderInstru:DEC_INSTRUCAO|      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|decoderInstru:DEC_INSTRUCAO       ; decoderInstru       ; work         ;
+;       |muxGenerico2x1:MUX_Entrada_ULA_B| ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|muxGenerico2x1:MUX_Entrada_ULA_B  ; muxGenerico2x1      ; work         ;
 ;       |registradorGenerico:PC|           ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|registradorGenerico:PC            ; registradorGenerico ; work         ;
 ;       |registradorGenerico:REGA|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|registradorGenerico:REGA          ; registradorGenerico ; work         ;
 ;       |somaConstante:incrementaPC|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|CPU:CPU|somaConstante:incrementaPC        ; somaConstante       ; work         ;
@@ -287,8 +295,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |registradorGenerico:REG3|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|display:display|registradorGenerico:REG3  ; registradorGenerico ; work         ;
 ;       |registradorGenerico:REG4|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|display:display|registradorGenerico:REG4  ; registradorGenerico ; work         ;
 ;       |registradorGenerico:REG5|         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|display:display|registradorGenerico:REG5  ; registradorGenerico ; work         ;
-;    |memoriaRAM:RAM1|                     ; 29 (29)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula8|memoriaRAM:RAM1                           ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                     ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
+;    |memoriaRAM:RAM1|                     ; 32 (32)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula8|memoriaRAM:RAM1                           ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                     ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula8|memoriaROM:ROM1                           ; memoriaROM          ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1035,6 +1043,69 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:key_reset" ;
++---------------+-------+----------+---------------------------+
+; Port          ; Type  ; Severity ; Details                   ;
++---------------+-------+----------+---------------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND              ;
++---------------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:key3" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:key2" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:key1" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:key0" ;
++---------------+-------+----------+----------------------+
+; Port          ; Type  ; Severity ; Details              ;
++---------------+-------+----------+----------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND         ;
++---------------+-------+----------+----------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:sw9" ;
++---------------+-------+----------+---------------------+
+; Port          ; Type  ; Severity ; Details             ;
++---------------+-------+----------+---------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND        ;
++---------------+-------+----------+---------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "buffer_3_state_8portas:sw8" ;
++---------------+-------+----------+---------------------+
+; Port          ; Type  ; Severity ; Details             ;
++---------------+-------+----------+---------------------+
+; entrada[7..1] ; Input ; Info     ; Stuck at GND        ;
++---------------+-------+----------+---------------------+
+
+
 +-----------------------------------------------------------------------+
 ; Port Connectivity Checks: "display:display|conversorHex7Seg:display5" ;
 +----------+-------+----------+-----------------------------------------+
@@ -1215,7 +1286,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; saida[7..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -1229,22 +1300,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 56                          ;
 ;     ENA SLD           ; 4                           ;
 ;     SLD               ; 9                           ;
-; arriav_lcell_comb     ; 112                         ;
+; arriav_lcell_comb     ; 119                         ;
 ;     arith             ; 14                          ;
 ;         1 data inputs ; 10                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 3                           ;
-;     normal            ; 98                          ;
+;         5 data inputs ; 4                           ;
+;     normal            ; 105                         ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 68                          ;
-;         5 data inputs ; 11                          ;
-;         6 data inputs ; 15                          ;
-; boundary_port         ; 67                          ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 77                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 17                          ;
+; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.20                        ;
-; Average LUT depth     ; 2.57                        ;
+; Average LUT depth     ; 2.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1263,7 +1333,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Apr 18 22:57:43 2023
+    Info: Processing started: Wed Apr 19 09:03:27 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1311,16 +1381,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
     Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 19
     Info (12023): Found entity 1: CPU File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file aula8.vhd
-    Info (12022): Found design unit 1: Aula8-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 20
+    Info (12022): Found design unit 1: Aula8-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 21
     Info (12023): Found entity 1: Aula8 File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file display.vhd
     Info (12022): Found design unit 1: display-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 18
     Info (12023): Found entity 1: display File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/buffer_3_state_8portas.vhd Line: 4
 Info (12127): Elaborating entity "aula8" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 63
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 66
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 72
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 76
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 74
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 77
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 83
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 87
 Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_Entrada_ULA_B" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 65
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 72
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 76
@@ -1339,20 +1412,21 @@ Info (10041): Inferred latch for "saida_MUX[7]" at muxGenerico4x1.vhd(16) File: 
 Info (10041): Inferred latch for "saida_MUX[8]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd Line: 16
 Info (12128): Elaborating entity "flipflop" for hierarchy "CPU:CPU|flipflop:FLAG_IGUAL" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 101
 Info (12128): Elaborating entity "logicoDesvio" for hierarchy "CPU:CPU|logicoDesvio:DESVIO" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/CPU.vhd Line: 103
-Info (12128): Elaborating entity "display" for hierarchy "display:display" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 89
+Info (12128): Elaborating entity "display" for hierarchy "display:display" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 100
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "display:display|registradorGenerico:REG0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 44
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "display:display|conversorHex7Seg:display0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 48
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:sw0a7" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 108
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[0]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[1]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[2]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[3]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[4]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[5]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[6]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[7]" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 17
+    Warning (13048): Converted tri-state node "saida_RAM[7]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[6]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[5]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[4]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[3]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[2]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[1]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[0]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico2x1.vhd Line: 10
 Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[0]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd Line: 16
 Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[1]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd Line: 16
 Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[2]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/muxGenerico4x1.vhd Line: 16
@@ -1377,7 +1451,7 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 452 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 14 input pin(s) that do not drive logic
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 11
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 12
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 12
@@ -1392,13 +1466,14 @@ Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 13
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 13
-Info (21057): Implemented 235 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
+    Warning (15610): No output dependent on input pin "FPGA_RESET" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 16
+Info (21057): Implemented 243 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 168 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4858 megabytes
-    Info: Processing ended: Tue Apr 18 22:57:53 2023
+    Info (21061): Implemented 175 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 4840 megabytes
+    Info: Processing ended: Wed Apr 19 09:03:37 2023
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:21
 
