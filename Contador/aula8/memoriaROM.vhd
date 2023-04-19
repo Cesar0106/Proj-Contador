@@ -36,23 +36,23 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)   := LDA&'1'&x"40";   
-        tmp(1)   := STA&'1'&x"20";
-        tmp(2)   := LDA&'1'&x"41";
-        tmp(3)   := STA&'1'&x"21";
-        tmp(4)   := LDA&'1'&x"42";
-        tmp(5)   := STA&'1'&x"22";
-        tmp(6)   := LDA&'1'&x"60";
-		  tmp(7)   := STA&'1'&x"23";
-		  tmp(8)   := LDA&'1'&x"61";
-		  tmp(9)   := STA&'1'&x"24";
-		  tmp(10)  := LDA&'1'&x"62";
-		  tmp(11)  := STA&'1'&x"25";
-		  tmp(12)  := LDA&'1'&x"63";
-		  tmp(13)  := STA&'1'&x"01";
-		  tmp(14)  := LDA&'1'&x"64";
-		  tmp(15)  := STA&'1'&x"02";
-		  tmp(14)  := JMP&'0'&x"00"; 
+		  tmp(0)   := LDA   & '1' & x"40";  
+        tmp(1)   := STA   & '1' & x"20";  
+        tmp(2)   := LDA   & '1' & x"41";   
+		  tmp(3)   := STA   & '1' & x"21";   
+        tmp(4)   := LDA   & '1' & x"42";  
+        tmp(5)   := STA   & '1' & x"22";  
+		  tmp(6)   := LDA   & '1' & x"60";   
+		  tmp(7)   := STA   & '1' & x"23";
+		  tmp(8)   := LDA   & '1' & x"61";
+		  tmp(9)   := STA   & '1' & x"24";
+		  tmp(10)  := LDA   & '1' & x"62";
+		  tmp(11)  := STA   & '1' & x"25";
+		  tmp(12)  := LDA   & '1' & x"63";
+		  tmp(13)  := STA   & '1' & x"01";
+		  tmp(14)  := LDA   & '1' & x"64";
+		  tmp(15)  := STA   & '1' & x"02";
+		  tmp(16)  := JMP   & '0' & x"00";
 		  
         return tmp;
     end initMemory;
