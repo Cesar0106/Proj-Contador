@@ -1,12 +1,14 @@
 |aula8
+CLOCK_50 => edgedetector:debounce0.clk
 CLOCK_50 => memoriaram:RAM1.clk
 CLOCK_50 => cpu:CPU.clock
 CLOCK_50 => flipflop:FF1.CLK
 CLOCK_50 => flipflop:FF2.CLK
 CLOCK_50 => registradorgenerico:REG8.CLK
 CLOCK_50 => display:display.CLK
-KEY[0] => buffer_3_state_8portas:key0.entrada[0]
-KEY[1] => buffer_3_state_8portas:key1.entrada[0]
+CLOCK_50 => edgedetector:debounce1.clk
+KEY[0] => edgedetector:debounce0.entrada
+KEY[1] => edgedetector:debounce1.entrada
 KEY[2] => buffer_3_state_8portas:key2.entrada[0]
 KEY[3] => buffer_3_state_8portas:key3.entrada[0]
 SW[0] => buffer_3_state_8portas:sw0a7.entrada[0]
@@ -630,6 +632,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
 
 
 |aula8|CPU:CPU|logicoDesvio:DESVIO
@@ -695,6 +698,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
 
 
 |aula8|flipflop:FF2
@@ -702,6 +706,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
 
 
 |aula8|registradorGenerico:REG8
@@ -1708,5 +1713,35 @@ saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
 saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
 saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
 saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|aula8|flipflop:ff_debounce0
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|aula8|flipflop:ff_debounce1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|aula8|edgeDetector:debounce0
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|aula8|edgeDetector:debounce1
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 

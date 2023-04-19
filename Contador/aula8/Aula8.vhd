@@ -56,6 +56,13 @@ architecture arquitetura of Aula8 is
   signal hab_key3 : std_logic;
   signal hab_reset : std_logic;
   
+  signal saida_deb0 : std_logic;
+  signal saida_ff_deb0: std_logic;
+  signal limpaLeitura0: std_logic;
+  signal saida_deb1 : std_logic;
+  signal saida_ff_deb1: std_logic;
+  signal limpaLeitura1: std_logic;
+  
 begin
 
 -- Instanciando os componentes:
@@ -89,9 +96,9 @@ CPU: entity work.CPU
 			 data_out=> saida_reg, data_in => saida_RAM, clock => CLK);
 
 
-FF1 : entity work.flipflop port map (DIN => saida_reg(0), DOUT => saida_ff1, ENABLE => hab_ff1, CLK => CLK);
+FF1 : entity work.flipflop port map (DIN => saida_reg(0), DOUT => saida_ff1, ENABLE => hab_ff1, CLK => CLK, RST => '0');
 
-FF2 : entity work.flipflop port map (DIN => saida_reg(0), DOUT => saida_ff2, ENABLE => hab_ff2, CLK => CLK);
+FF2 : entity work.flipflop port map (DIN => saida_reg(0), DOUT => saida_ff2, ENABLE => hab_ff2, CLK => CLK, RST => '0');
 
 REG8 : entity work.registradorGenerico  generic map (larguraDados => 8)
           port map (DIN => saida_reg(7 downto 0), DOUT => saida_reg8, ENABLE => hab_reg8, CLK => CLK, RST => '0');
@@ -117,10 +124,10 @@ sw9: entity work.buffer_3_state_8portas
 				
 				
 key0: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & KEY(0), habilita => hab_key0, saida => saida_RAM);
+            port map (entrada => "0000000" & saida_ff_deb0, habilita => hab_key0, saida => saida_RAM);
 				
 key1: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & KEY(1), habilita => hab_key1, saida => saida_RAM);		
+            port map (entrada => "0000000" & saida_ff_deb1, habilita => hab_key1, saida => saida_RAM);		
 		
 key2: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & KEY(2), habilita => hab_key2, saida => saida_RAM);	
@@ -130,9 +137,20 @@ key3: entity work.buffer_3_state_8portas
 		
 key_reset: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & FPGA_RESET_N, habilita => hab_reset, saida => saida_RAM);	
+				
+				
+				
+debounce0: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_deb0);
 		
+ff_debounce0: entity work.flipflop
+        port map (DIN => '1', DOUT => saida_ff_deb0, ENABLE => '1', CLK => saida_deb0, RST => limpaLeitura0);
 
-
+debounce1: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(1)), saida => saida_deb1);
+		
+ff_debounce1: entity work.flipflop
+        port map (DIN => '1', DOUT => saida_ff_deb1, ENABLE => '1', CLK => saida_deb1, RST => limpaLeitura1);
 		
 -- I/O
 --chavesY_MUX_A <= SW(3 downto 0);
@@ -157,9 +175,14 @@ HEX3 <= dis3;
 HEX4 <= dis4;
 HEX5 <= dis5;
 
+limpaLeitura0 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
+                  and data_adr(3) and data_adr(2) and data_adr(1) and data_adr(0));
 
+limpaLeitura1 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
+                  and data_adr(3) and data_adr(2) and data_adr(1) and (not data_adr(0)));
 
-
+						
+						
 hab_sw0a7<=(rd and not(data_adr(5)) and saida_dec2(0) and saida_dec1(5));
 hab_sw8 <= (rd and not(data_adr(5)) and saida_dec2(1) and saida_dec1(5));
 hab_sw9 <= (rd and not(data_adr(5)) and saida_dec2(2) and saida_dec1(5));

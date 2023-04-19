@@ -98,7 +98,7 @@ MUX_PC :  entity work.muxGenerico4x1  generic map (larguraDados => 9)
                  seletor_MUX => saida_desvio,
                  saida_MUX => PC_MUX);
 
-FLAG_IGUAL : entity work.flipflop port map (DIN => zero_flag, DOUT => saida_flag, ENABLE => hab_flag, CLK => CLK, RST => '0');
+FLAG_IGUAL : entity work.flipflop port map (DIN => zero_flag, DOUT => saida_flag, ENABLE => hab_flag, CLK => CLK);
 
 DESVIO : entity work.logicoDesvio port map( ent_JMP => JMP, ent_flag  => saida_flag, ent_JEQ => JEQ,  
 															ent_JSR => JSR, ent_RET => RET, saida => saida_desvio); 
