@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula8
-Wed Apr 19 15:55:27 2023
+Wed Apr 19 16:49:22 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -94,7 +94,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Apr 19 15:55:27 2023       ;
+; Analysis & Synthesis Status     ; Successful - Wed Apr 19 16:49:22 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula8                                       ;
 ; Top-level Entity Name           ; Aula8                                       ;
@@ -215,8 +215,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -1314,7 +1313,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1324,7 +1323,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 19 15:55:06 2023
+    Info: Processing started: Wed Apr 19 16:49:11 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula8 -c aula8
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1407,7 +1406,7 @@ Info (12128): Elaborating entity "display" for hierarchy "display:display" File:
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "display:display|registradorGenerico:REG0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 44
 Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "display:display|conversorHex7Seg:display0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/display.vhd Line: 48
 Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:sw0a7" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 115
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:debounce0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 149
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:debounce0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/Aula8.vhd Line: 143
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/aula8/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
@@ -1436,9 +1435,9 @@ Info (21057): Implemented 419 device resources after synthesis - the final resou
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 351 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4858 megabytes
-    Info: Processing ended: Wed Apr 19 15:55:27 2023
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Wed Apr 19 16:49:22 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:22
 
 
