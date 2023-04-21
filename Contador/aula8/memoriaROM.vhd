@@ -59,12 +59,12 @@ architecture assincrona of memoriaROM is
 		tmp(17)   := LDI   & '0' & x"01";
 		tmp(18)   := STA   & '0' & x"07";
 
-        tmp(19)   := LDI   & '0' & x"10";
-		tmp(20)   := STA   & '0' & x"10";
+        tmp(19)   := LDI   & '0' & x"0A";
+		tmp(20)   := STA   & '0' & x"0A";
 
         tmp(21)   := LDA   & '1' & X"61";
         tmp(22)   := CEQ   & '0' & X"07";
-        tmp(23)   := JEQ   & '0' & X"    ";
+        tmp(23)   := JEQ   & '0' & X"43";
 
         tmp(24)   := LDA   & '1' & X"60";
         tmp(25)   := CEQ   & '0' & X"06";
@@ -80,7 +80,7 @@ architecture assincrona of memoriaROM is
         tmp(32)   := SOMA  & '0' & X"07";
         tmp(33)   := STA   & '0' & X"00";
         tmp(34)   := CEQ   & '0' & X"0A";
-        tmp(35)   := JEQ   & '0' & X"  ";
+        tmp(35)   := JEQ   & '0' & X"32";
         tmp(36)   := RET   & '0' & X"00";
 
 
@@ -97,6 +97,32 @@ architecture assincrona of memoriaROM is
         tmp(47)   := LDA   & '0' & X"05";
         tmp(48)   := STA   & '1' & X"25";
         tmp(49)   := RET   & '0' & X"00";
+
+        tmp(50)   := LDI   & '0' & X"00";
+        tmp(51)   := STA   & '0' & X"00";
+        tmp(52)   := LDA   & '0' & X"01";
+        tmp(53)   := SOMA  & '0' & X"07";
+        tmp(54)   := STA   & '0' & X"01";
+        tmp(55)   := CEQ   & '0' & X"0A";
+        tmp(56)   := JEQ   & '0' & X"3A";
+        tmp(57)   := RET   & '0' & X"00";
+
+        tmp(58)   := LDI   & '0' & X"00";
+        tmp(59)   := STA   & '0' & X"01";
+        tmp(60)   := LDA   & '0' & X"02";
+        tmp(61)   := SOMA  & '0' & X"07";
+        tmp(62)   := STA   & '0' & X"02";
+        tmp(63)   := CEQ   & '0' & X"0A";
+        tmp(64)   := JEQ   & '0' & X"42";
+        tmp(65)   := RET   & '0' & X"00";
+
+        tmp(66)   := NOP   & '0' & X"00";
+		  
+		  tmp(67)   := STA   & '1' & X"FE";
+		  tmp(68)   := JMP   & '0' & X"00";
+
+
+
 
 		  
         return tmp;
