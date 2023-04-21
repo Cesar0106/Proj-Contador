@@ -64,7 +64,7 @@ architecture assincrona of memoriaROM is
 
         tmp(21)   := LDA   & '1' & X"61";
         tmp(22)   := CEQ   & '0' & X"07";
-        tmp(23)   := JEQ   & '0' & X"43";
+        tmp(23)   := JEQ   & '0' & X"5E";
 
         tmp(24)   := LDA   & '1' & X"60";
         tmp(25)   := CEQ   & '0' & X"06";
@@ -116,10 +116,46 @@ architecture assincrona of memoriaROM is
         tmp(64)   := JEQ   & '0' & X"42";
         tmp(65)   := RET   & '0' & X"00";
 
-        tmp(66)   := NOP   & '0' & X"00";
-		  
-		  tmp(67)   := STA   & '1' & X"FE";
-		  tmp(68)   := JMP   & '0' & X"00";
+        --AUMENTA_MILHAR
+        tmp(66)   := LDI   & '0' & X"00";
+		tmp(67)   := STA   & '0' & X"02";
+        tmp(68)   := LDA   & '0' & X"03";
+        tmp(69)   := SOMA  & '0' & X"07";
+        tmp(70)   := STA   & '0' & X"03";
+        tmp(71)   := CEQ   & '0' & X"0A";
+        tmp(72)   := JEQ   & '0' & X"4A";
+        tmp(73)   := RET   & '0' & X"00";
+
+        --AUMENTA_DEZENA_MI
+        tmp(74)   := LDI   & '0' & X"00";
+		tmp(75)   := STA   & '0' & X"03";
+        tmp(76)   := LDA   & '0' & X"04";
+        tmp(77)   := SOMA  & '0' & X"07";
+        tmp(78)   := STA   & '0' & X"04";
+        tmp(79)   := CEQ   & '0' & X"0A";
+        tmp(80)   := JEQ   & '0' & X"52";
+        tmp(81)   := RET   & '0' & X"00";
+
+        --AUMENTA_CENTENA_MI
+        tmp(82)   := LDI   & '0' & X"00";
+		tmp(83)   := STA   & '0' & X"04";
+        tmp(84)   := LDA   & '0' & X"05";
+        tmp(85)   := SOMA  & '0' & X"07";
+        tmp(86)   := STA   & '0' & X"05";
+        tmp(87)   := CEQ   & '0' & X"0A";
+        tmp(88)   := JEQ   & '0' & X"5A";
+        tmp(89)   := RET   & '0' & X"00";
+
+
+        --OVERFLOW
+        tmp(90)   := LDI   & '0' & X"01";
+		tmp(91)   := STA   & '1' & X"02";
+        tmp(92)   := STA   & '0' & X"06";
+		tmp(93)   := RET   & '0' & X"00";
+
+        --RESET
+		tmp(94)   := STA   & '1' & X"FE";
+		tmp(95)   := JMP   & '0' & X"00";
 
 
 
