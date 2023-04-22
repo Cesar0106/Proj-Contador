@@ -36,126 +36,144 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
+
+        --SET UP
 		tmp(0)    := LDI   & '0' & x"00";  
-        tmp(1)    := STA   & '1' & x"20";  
-        tmp(2)    := STA   & '1' & x"21";   
-	    tmp(3)    := STA   & '1' & x"22";   
-        tmp(4)    := STA   & '1' & x"23";  
-        tmp(5)    := STA   & '1' & x"24";  
-        tmp(6)    := STA   & '1' & x"25";
+        tmp(1)    := STA   & '1' & x"20";  --HEX0
+        tmp(2)    := STA   & '1' & x"21";  --HEX1 
+	    tmp(3)    := STA   & '1' & x"22";  --HEX2
+        tmp(4)    := STA   & '1' & x"23";  --HEX3
+        tmp(5)    := STA   & '1' & x"24";  --HEX4
+        tmp(6)    := STA   & '1' & x"25";  --HEX5
 
-		tmp(7)    := STA   & '1' & x"00";
-		tmp(8)    := STA   & '1' & x"01";  
-        tmp(9)    := STA   & '1' & x"02";
+		tmp(7)    := STA   & '1' & x"00";  --LEDR 0 a 7
+		tmp(8)    := STA   & '1' & x"01";  --LEDR 8
+        tmp(9)    := STA   & '1' & x"02";  --LEDR 9
 
-        tmp(10)   := STA   & '0' & x"00";   
-		tmp(11)   := STA   & '0' & x"01";
-		tmp(12)   := STA   & '0' & x"02";  
-        tmp(13)   := STA   & '0' & x"03";  
-        tmp(14)   := STA   & '0' & x"04";   
-		tmp(15)   := STA   & '0' & x"05";
-		tmp(16)   := STA   & '0' & x"06";
+        tmp(10)   := LDI   & '0' & X"00";  
+        tmp(11)   := STA   & '0' & x"00";  --UNIDADE 
+		tmp(12)   := STA   & '0' & x"01";  --DEZENAS
+		tmp(13)   := STA   & '0' & x"02";  --CENTENAS 
+        tmp(14)   := STA   & '0' & x"03";  --MILHAR 
+        tmp(15)   := STA   & '0' & x"04";  --DEZENAS DE MILHAR 
+        tmp(16)   := STA   & '0' & x"05";  --CENTENAS DE MILHAR 
 
-		tmp(17)   := LDI   & '0' & x"01";
-		tmp(18)   := STA   & '0' & x"07";
+        tmp(17)   := LDI   & '0' & X"00";
+		tmp(18)   := STA   & '0' & x"06";  --FLAG PARA O KEY 0
 
-        tmp(19)   := LDI   & '0' & x"0A";
-		tmp(20)   := STA   & '0' & x"0A";
+		tmp(19)   := LDI   & '0' & x"01";  
+		tmp(20)   := STA   & '0' & x"07";  --GUARDA O VALOR 1
+        tmp(21)   := STA   & '0' & x"08";  --FLAG DO RESET
 
-        tmp(21)   := LDA   & '1' & X"61";
-        tmp(22)   := CEQ   & '0' & X"07";
-        tmp(23)   := JEQ   & '0' & X"5E";
+        tmp(22)   := LDI   & '0' & x"0A";  --GUARDAR O VALOR 10
+		tmp(23)   := STA   & '0' & x"0A";
 
-        tmp(24)   := LDA   & '1' & X"60";
-        tmp(25)   := CEQ   & '0' & X"06";
-        tmp(26)   := JEQ   & '0' & X"1C";
+        --INCIO
+        tmp(24)   := LDA   & '1' & X"61";
+        tmp(25)   := CEQ   & '0' & X"08";
+        tmp(26)   := JEQ   & '0' & X"69";
 
-        tmp(27)   := JSR   & '0' & X"1E";
+        tmp(27)   := LDA   & '1' & X"60";
+        tmp(28)   := CEQ   & '0' & X"06";
+        tmp(29)   := JEQ   & '0' & X"1F";
+        tmp(30)   := JSR   & '0' & X"21";
 
-        tmp(28)   := JSR   & '0' & X"25";
-        tmp(29)   := JMP   & '0' & X"15";
+        --PULA1 
+        tmp(31)   := JSR   & '0' & X"28";
+        tmp(32)   := JMP   & '0' & X"18";
 
-        tmp(30)   := STA   & '1' & X"FF";
-        tmp(31)   := LDA   & '0' & X"00";
-        tmp(32)   := SOMA  & '0' & X"07";
-        tmp(33)   := STA   & '0' & X"00";
-        tmp(34)   := CEQ   & '0' & X"0A";
-        tmp(35)   := JEQ   & '0' & X"32";
-        tmp(36)   := RET   & '0' & X"00";
+        --INCREMENTA UNIDADE
+        tmp(33)   := STA   & '1' & X"FF";
+        tmp(34)   := LDA   & '0' & X"00";
+        tmp(35)   := SOMA  & '0' & X"07";
+        tmp(36)   := STA   & '0' & X"00";
+        tmp(37)   := CEQ   & '0' & X"0A";
+        tmp(38)   := JEQ   & '0' & X"35";
+        tmp(39)   := RET   & '0' & X"00";
 
+        --DISPLAY
+        tmp(40)   := LDA   & '0' & X"00";
+        tmp(41)   := STA   & '1' & X"20";
+        tmp(42)   := LDA   & '0' & X"01";
+        tmp(43)   := STA   & '1' & X"21";
+        tmp(44)   := LDA   & '0' & X"02";
+        tmp(45)   := STA   & '1' & X"22";
+        tmp(46)   := LDA   & '0' & X"03";
+        tmp(47)   := STA   & '1' & X"23";
+        tmp(48)   := LDA   & '0' & X"04";
+        tmp(49)   := STA   & '1' & X"24";
+        tmp(50)   := LDA   & '0' & X"05";
+        tmp(51)   := STA   & '1' & X"25";
+        tmp(52)   := RET   & '0' & X"00";
 
-        tmp(37)   := LDA   & '0' & X"00";
-        tmp(38)   := STA   & '1' & X"20";
-        tmp(39)   := LDA   & '0' & X"01";
-        tmp(40)   := STA   & '1' & X"21";
-        tmp(41)   := LDA   & '0' & X"02";
-        tmp(42)   := STA   & '1' & X"22";
-        tmp(43)   := LDA   & '0' & X"03";
-        tmp(44)   := STA   & '1' & X"23";
-        tmp(45)   := LDA   & '0' & X"04";
-        tmp(46)   := STA   & '1' & X"24";
-        tmp(47)   := LDA   & '0' & X"05";
-        tmp(48)   := STA   & '1' & X"25";
-        tmp(49)   := RET   & '0' & X"00";
+        --AUMENTA DEZENA
+        tmp(53)   := LDI   & '0' & X"00";
+        tmp(54)   := STA   & '0' & X"00";
+        tmp(55)   := LDA   & '0' & X"01";
+        tmp(56)   := SOMA  & '0' & X"07";
+        tmp(57)   := STA   & '0' & X"01";
+        tmp(58)   := CEQ   & '0' & X"0A";
+        tmp(59)   := JEQ   & '0' & X"3D";
+        tmp(60)   := RET   & '0' & X"00";
 
-        tmp(50)   := LDI   & '0' & X"00";
-        tmp(51)   := STA   & '0' & X"00";
-        tmp(52)   := LDA   & '0' & X"01";
-        tmp(53)   := SOMA  & '0' & X"07";
-        tmp(54)   := STA   & '0' & X"01";
-        tmp(55)   := CEQ   & '0' & X"0A";
-        tmp(56)   := JEQ   & '0' & X"3A";
-        tmp(57)   := RET   & '0' & X"00";
-
-        tmp(58)   := LDI   & '0' & X"00";
-        tmp(59)   := STA   & '0' & X"01";
-        tmp(60)   := LDA   & '0' & X"02";
-        tmp(61)   := SOMA  & '0' & X"07";
-        tmp(62)   := STA   & '0' & X"02";
-        tmp(63)   := CEQ   & '0' & X"0A";
-        tmp(64)   := JEQ   & '0' & X"42";
-        tmp(65)   := RET   & '0' & X"00";
+        --AUMENTA_CENTENA
+        tmp(61)   := LDI   & '0' & X"00";
+        tmp(62)   := STA   & '0' & X"01";
+        tmp(63)   := LDA   & '0' & X"02";
+        tmp(64)   := SOMA  & '0' & X"07";
+        tmp(65)   := STA   & '0' & X"02";
+        tmp(66)   := CEQ   & '0' & X"0A";
+        tmp(67)   := JEQ   & '0' & X"45";
+        tmp(68)   := RET   & '0' & X"00";
 
         --AUMENTA_MILHAR
-        tmp(66)   := LDI   & '0' & X"00";
-		tmp(67)   := STA   & '0' & X"02";
-        tmp(68)   := LDA   & '0' & X"03";
-        tmp(69)   := SOMA  & '0' & X"07";
-        tmp(70)   := STA   & '0' & X"03";
-        tmp(71)   := CEQ   & '0' & X"0A";
-        tmp(72)   := JEQ   & '0' & X"4A";
-        tmp(73)   := RET   & '0' & X"00";
+        tmp(69)   := LDI   & '0' & X"00";
+		tmp(70)   := STA   & '0' & X"02";
+        tmp(71)   := LDA   & '0' & X"03";
+        tmp(72)   := SOMA  & '0' & X"07";
+        tmp(73)   := STA   & '0' & X"03";
+        tmp(74)   := CEQ   & '0' & X"0A";
+        tmp(75)   := JEQ   & '0' & X"4D";
+        tmp(76)   := RET   & '0' & X"00";
 
-        --AUMENTA_DEZENA_MI
-        tmp(74)   := LDI   & '0' & X"00";
-		tmp(75)   := STA   & '0' & X"03";
-        tmp(76)   := LDA   & '0' & X"04";
-        tmp(77)   := SOMA  & '0' & X"07";
-        tmp(78)   := STA   & '0' & X"04";
-        tmp(79)   := CEQ   & '0' & X"0A";
-        tmp(80)   := JEQ   & '0' & X"52";
-        tmp(81)   := RET   & '0' & X"00";
+        --AUMENTA DEZENAS DE MILHAR
+        tmp(77)   := LDI   & '0' & X"00";
+		tmp(78)   := STA   & '0' & X"03";
+        tmp(79)   := LDA   & '0' & X"04";
+        tmp(80)   := SOMA  & '0' & X"07";
+        tmp(81)   := STA   & '0' & X"04";
+        tmp(82)   := CEQ   & '0' & X"0A";
+        tmp(83)   := JEQ   & '0' & X"55";
+        tmp(84)   := RET   & '0' & X"00";
 
-        --AUMENTA_CENTENA_MI
-        tmp(82)   := LDI   & '0' & X"00";
-		tmp(83)   := STA   & '0' & X"04";
-        tmp(84)   := LDA   & '0' & X"05";
-        tmp(85)   := SOMA  & '0' & X"07";
-        tmp(86)   := STA   & '0' & X"05";
-        tmp(87)   := CEQ   & '0' & X"0A";
-        tmp(88)   := JEQ   & '0' & X"5A";
-        tmp(89)   := RET   & '0' & X"00";
+        --AUMENTA CENTENAS DE MILHAR
+        tmp(85)   := LDI   & '0' & X"00";
+		tmp(86)   := STA   & '0' & X"04";
+        tmp(87)   := LDA   & '0' & X"05";
+        tmp(88)   := SOMA  & '0' & X"07";
+        tmp(89)   := STA   & '0' & X"05";
+        tmp(90)   := CEQ   & '0' & X"0A";
+        tmp(91)   := JEQ   & '0' & X"5D";
+        tmp(92)   := RET   & '0' & X"00";
 
 
         --OVERFLOW
-        tmp(90)   := LDI   & '0' & X"01";
-		tmp(91)   := STA   & '1' & X"02";
-        tmp(92)   := STA   & '0' & X"06";
-		tmp(93)   := RET   & '0' & X"00";
+        tmp(93)   := LDI   & '0' & X"09";
+		tmp(94)   := STA   & '0' & X"00";
+		tmp(95)   := STA   & '0' & X"01";
+		tmp(96)   := STA   & '0' & X"02";
+		tmp(97)   := STA   & '0' & X"03";
+		tmp(98)   := STA   & '0' & X"04";
+		tmp(99)   := STA   & '0' & X"05";
+        tmp(100)   := LDI   & '0' & X"00";
+		tmp(101)   := STA   & '0' & X"07";
+        tmp(102)   := LDI   & '0' & X"01";
+		tmp(103)   := STA   & '1' & X"02";
+        tmp(104)   := RET   & '0' & X"00";
 
         --RESET
-		tmp(94)   := STA   & '1' & X"FE";
-		tmp(95)   := JMP   & '0' & X"00";
+		tmp(105)   := STA   & '1' & X"FE";
+		tmp(106)   := JMP   & '0' & X"00";
 
 
 
