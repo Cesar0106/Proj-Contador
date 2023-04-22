@@ -62,6 +62,9 @@ architecture arquitetura of Contador is
   signal saida_deb1 : std_logic;
   signal saida_ff_deb1: std_logic;
   signal limpaLeitura1: std_logic;
+  signal saida_deb2 : std_logic;
+  signal saida_ff_deb2: std_logic;
+  signal limpaLeitura2: std_logic;
   
 begin
 
@@ -130,7 +133,7 @@ key1: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & saida_ff_deb1, habilita => hab_key1, saida => saida_RAM);		
 		
 key2: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & KEY(2), habilita => hab_key2, saida => saida_RAM);	
+            port map (entrada => "0000000" & saida_ff_deb2, habilita => hab_key2, saida => saida_RAM);	
 		
 key3: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & KEY(3), habilita => hab_key3, saida => saida_RAM);	
@@ -151,6 +154,12 @@ debounce1: work.edgeDetector(bordaSubida)
 		
 ff_debounce1: entity work.flipflop
         port map (DIN => '1', DOUT => saida_ff_deb1, ENABLE => '1', CLK => saida_deb1, RST => limpaLeitura1);
+		  
+debounce2: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(2)), saida => saida_deb2);
+		
+ff_debounce2: entity work.flipflop
+        port map (DIN => '1', DOUT => saida_ff_deb2, ENABLE => '1', CLK => saida_deb2, RST => limpaLeitura2);
 		
 -- I/O
 --chavesY_MUX_A <= SW(3 downto 0);
@@ -180,6 +189,9 @@ limpaLeitura0 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_ad
 
 limpaLeitura1 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
                   and data_adr(3) and data_adr(2) and data_adr(1) and (not data_adr(0)));
+						
+limpaLeitura2 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
+                  and data_adr(3) and data_adr(2) and (not data_adr(1)) and data_adr(0));
 
 						
 						

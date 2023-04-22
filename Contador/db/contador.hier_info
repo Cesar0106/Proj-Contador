@@ -7,9 +7,10 @@ CLOCK_50 => flipflop:FF2.CLK
 CLOCK_50 => registradorgenerico:REG8.CLK
 CLOCK_50 => display:display.CLK
 CLOCK_50 => edgedetector:debounce1.clk
+CLOCK_50 => edgedetector:debounce2.clk
 KEY[0] => edgedetector:debounce0.entrada
 KEY[1] => edgedetector:debounce1.entrada
-KEY[2] => buffer_3_state_8portas:key2.entrada[0]
+KEY[2] => edgedetector:debounce2.entrada
 KEY[3] => buffer_3_state_8portas:key3.entrada[0]
 SW[0] => buffer_3_state_8portas:sw0a7.entrada[0]
 SW[1] => buffer_3_state_8portas:sw0a7.entrada[1]
@@ -1738,6 +1739,21 @@ saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |contador|flipflop:ff_debounce1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|edgeDetector:debounce2
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|flipflop:ff_debounce2
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
