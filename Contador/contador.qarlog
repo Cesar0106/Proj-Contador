@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/contador.qarlog
+
+Archive:	C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/contador.qar
+Date:		Mon Apr 24 12:17:29 2023
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/CPU.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/Contador.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/ULASomaSub.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/buffer_3_state_8portas.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/contador.qpf
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/contador.qsf
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/conversorHex7Seg.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/decoder3x8.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/decoderInstru.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/display.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/edgeDetector.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/flipflop.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/logicoDesvio.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/memoriaRAM.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/memoriaROM.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/muxGenerico2x1.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/muxGenerico4x1.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/registradorGenerico.vhd
+C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Contador/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 20 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
