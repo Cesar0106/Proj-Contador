@@ -33,7 +33,7 @@ def  converteArroba(line):
 #concatena com o bit de habilita 
 def converteArroba9bits(line):
     line = line.split('@')
-    if line[1] not in label_dict.keys():
+    if line[1] not in dict_labels.keys():
         if line[1].isdigit():
             if(int(line[1]) > 255 ):
                 line[1] = str(int(line[1]) - 256)
@@ -46,7 +46,7 @@ def converteArroba9bits(line):
             print("Warning: Non-integer value found after '@':", line[1])
             line[1] = "\" & '0' & x\"00"
     else:
-        line[1] = hex(int(label_dict[line[1]]))[2:].upper().zfill(2)
+        line[1] = hex(int(dict_labels[line[1]]))[2:].upper().zfill(2)
         line[1] = "\" & '0' & x\"" + line[1]
     line = ''.join(line)
     return line
@@ -63,8 +63,8 @@ def  converteCifrao(line):
     
 def converteCifrao9bits(line):
     line = line.split('$')
-    if line[1] in label_dict.keys():
-        line[1] = hex(int(label_dict[line[1]]))[2:].upper().zfill(2)
+    if line[1] in dict_labels.keys():
+        line[1] = hex(int(dict_labels[line[1]]))[2:].upper().zfill(2)
         line[1] = "\" & '0' & x\"" + line[1]
     else:
         if line[1].isdigit():
@@ -86,8 +86,8 @@ def converteCifrao9bits(line):
 #Define a string que representa o comentário
 #a partir do caractere cerquilha '#'
 def defineComentario(line):
-    if '#' in line:
-        splitted_line = line.split('#', 1)
+    if '--' in line:
+        splitted_line = line.split('--', 1)
         return splitted_line[0].strip(), splitted_line[1].strip()
     else:
         return line.strip(), ""
@@ -96,7 +96,7 @@ def defineComentario(line):
 #Remove o comentário a partir do caractere cerquilha '#',
 #deixando apenas a instrução
 def defineInstrucao(line):
-    line = line.split('#')
+    line = line.split('--')
     line = line[0]
     return line
     
@@ -110,29 +110,34 @@ def trataMnemonico(line):
     line = "".join(line)
     return line
     
-def achaLabels(line):
-    if ':' in line:
-        line = line.split(':')
-        line = line[0]
-        return line
-    else:
-        return None
 
 with open(inputASM, "r") as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
-    
-label_dict = {}
 
 with open(outputBIN, "w+") as f:  #Abre o destino BIN
 
     cont = 0 #Cria uma variável para contagem
-    
+    dict_labels = {} #Cria um dicionário para armazenar as labels
+
+    for line in lines:
+            #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
+        if(line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
+            line = line.replace("\n", "")
+            print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
+        else:
+            if ':' in line:
+                label = line.split(':')[0]
+                comentario = line.split(':')[1]
+                dict_labels[label] = cont
+                lines[cont]="NOP"+" "+comentario
+        cont+=1
+
+    cont = 0
     for line in lines:        
-        
-        label = achaLabels(line)  
-        if label:
-            label_dict[label] = cont 
-            line = line.replace(label + ":", "") 
+        if (" ") in line:
+            if line.split(" ")[1] in dict_labels.keys():
+                label = line.split(" ")[1]
+                line = line.replace(line, "JEQ" + " " + "@" + f"{dict_labels[label]}") 
 
         #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
@@ -169,8 +174,10 @@ with open(outputBIN, "w+") as f:  #Abre o destino BIN
                 else:
                     instrucaoLine = instrucaoLine + "\" & " + "\'0\' & " + "x\"00" #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
                 
-            
-            line = 'tmp(' + str(cont) + ') := x"' + instrucaoLine + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
+            for instru in mne:
+                if mne[instru] == instrucaoLine[0]:
+                    instrucaoLine=instru+instrucaoLine[2:]
+            line = 'tmp(' + str(cont) + ') := ' + instrucaoLine + '";\t-- ' + comentarioLine + '\n'   #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
                                         
@@ -179,13 +186,6 @@ with open(outputBIN, "w+") as f:  #Abre o destino BIN
             
             print(line,end = '') #Print apenas para debug
             
-
-            
-############################             
-############################            
-#Conversão para arquivo .mif
-############################             
-############################
             
 with open(outputMIF, "r") as f: #Abre o arquivo de MIF
     headerMIF = f.readlines() #Faz a leitura das linhas do arquivo,
@@ -212,8 +212,8 @@ with open(outputMIF, "w") as f:  #Abre o destino MIF
         for char, replacement in replacements:
             if char in line:
                 line = line.replace(char, replacement) #Remove os caracteres que foram definidos
-                
-        line = line.split('#') #Remove o comentário da linha
+
+        line = line.split('--') #Remove o comentário da linha
         
         if "\n" in line[0]:
             line = line[0] 
