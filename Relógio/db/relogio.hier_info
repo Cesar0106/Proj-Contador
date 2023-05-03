@@ -1,14 +1,14 @@
 |relogio
-CLOCK_50 => edgedetector:debounce0.clk
+CLOCK_50 => edgedetector:debounce1.clk
 CLOCK_50 => memoriaram:RAM1.clk
 CLOCK_50 => cpu:CPU.clock
 CLOCK_50 => flipflop:FF1.CLK
 CLOCK_50 => flipflop:FF2.CLK
 CLOCK_50 => registradorgenerico:REG8.CLK
 CLOCK_50 => display:display.CLK
-CLOCK_50 => edgedetector:debounce1.clk
 CLOCK_50 => edgedetector:debounce2.clk
-KEY[0] => edgedetector:debounce0.entrada
+CLOCK_50 => divisorgenerico_e_interface:interfaceBaseTempo.clk
+KEY[0] => ~NO_FANOUT~
 KEY[1] => edgedetector:debounce1.entrada
 KEY[2] => edgedetector:debounce2.entrada
 KEY[3] => buffer_3_state_8portas:key3.entrada[0]
@@ -102,7 +102,6 @@ Dado[11] <= memROM.DATAOUT11
 Dado[12] <= memROM.DATAOUT12
 Dado[13] <= memROM.DATAOUT13
 Dado[14] <= memROM.DATAOUT14
-Dado[15] <= memROM.DATAOUT15
 
 
 |relogio|decoder3x8:DEC1
@@ -280,11 +279,10 @@ instru_in[8] => muxgenerico4x1:MUX_PC.ent1_MUX[8]
 instru_in[8] => data_adr[8].DATAIN
 instru_in[9] => bancoregistradoresarqregmem:RegMem.endereco[0]
 instru_in[10] => bancoregistradoresarqregmem:RegMem.endereco[1]
-instru_in[11] => bancoregistradoresarqregmem:RegMem.endereco[2]
-instru_in[12] => decoderinstru:DEC_INSTRUCAO.opcode[0]
-instru_in[13] => decoderinstru:DEC_INSTRUCAO.opcode[1]
-instru_in[14] => decoderinstru:DEC_INSTRUCAO.opcode[2]
-instru_in[15] => decoderinstru:DEC_INSTRUCAO.opcode[3]
+instru_in[11] => decoderinstru:DEC_INSTRUCAO.opcode[0]
+instru_in[12] => decoderinstru:DEC_INSTRUCAO.opcode[1]
+instru_in[13] => decoderinstru:DEC_INSTRUCAO.opcode[2]
+instru_in[14] => decoderinstru:DEC_INSTRUCAO.opcode[3]
 data_adr[0] <= instru_in[0].DB_MAX_OUTPUT_PORT_TYPE
 data_adr[1] <= instru_in[1].DB_MAX_OUTPUT_PORT_TYPE
 data_adr[2] <= instru_in[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -658,7 +656,7 @@ RST => DOUT[8]~reg0.ACLR
 
 
 |relogio|CPU:CPU|bancoRegistradoresArqRegMem:RegMem
-clk => registrador~11.CLK
+clk => registrador~10.CLK
 clk => registrador~0.CLK
 clk => registrador~1.CLK
 clk => registrador~2.CLK
@@ -669,34 +667,30 @@ clk => registrador~6.CLK
 clk => registrador~7.CLK
 clk => registrador~8.CLK
 clk => registrador~9.CLK
-clk => registrador~10.CLK
 clk => registrador.CLK0
-endereco[0] => registrador~2.DATAIN
+endereco[0] => registrador~1.DATAIN
 endereco[0] => registrador.WADDR
 endereco[0] => registrador.RADDR
-endereco[1] => registrador~1.DATAIN
+endereco[1] => registrador~0.DATAIN
 endereco[1] => registrador.WADDR1
 endereco[1] => registrador.RADDR1
-endereco[2] => registrador~0.DATAIN
-endereco[2] => registrador.WADDR2
-endereco[2] => registrador.RADDR2
-dadoEscrita[0] => registrador~10.DATAIN
+dadoEscrita[0] => registrador~9.DATAIN
 dadoEscrita[0] => registrador.DATAIN
-dadoEscrita[1] => registrador~9.DATAIN
+dadoEscrita[1] => registrador~8.DATAIN
 dadoEscrita[1] => registrador.DATAIN1
-dadoEscrita[2] => registrador~8.DATAIN
+dadoEscrita[2] => registrador~7.DATAIN
 dadoEscrita[2] => registrador.DATAIN2
-dadoEscrita[3] => registrador~7.DATAIN
+dadoEscrita[3] => registrador~6.DATAIN
 dadoEscrita[3] => registrador.DATAIN3
-dadoEscrita[4] => registrador~6.DATAIN
+dadoEscrita[4] => registrador~5.DATAIN
 dadoEscrita[4] => registrador.DATAIN4
-dadoEscrita[5] => registrador~5.DATAIN
+dadoEscrita[5] => registrador~4.DATAIN
 dadoEscrita[5] => registrador.DATAIN5
-dadoEscrita[6] => registrador~4.DATAIN
+dadoEscrita[6] => registrador~3.DATAIN
 dadoEscrita[6] => registrador.DATAIN6
-dadoEscrita[7] => registrador~3.DATAIN
+dadoEscrita[7] => registrador~2.DATAIN
 dadoEscrita[7] => registrador.DATAIN7
-habilitaEscrita => registrador~11.DATAIN
+habilitaEscrita => registrador~10.DATAIN
 habilitaEscrita => registrador.WE
 saida[0] <= registrador.DATAOUT
 saida[1] <= registrador.DATAOUT1
@@ -1730,13 +1724,6 @@ saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
 saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|relogio|edgeDetector:debounce0
-clk => saidaQ.CLK
-entrada => saida.IN1
-entrada => saidaQ.DATAIN
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |relogio|flipflop:ff_debounce0
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1768,6 +1755,44 @@ saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogio|flipflop:ff_debounce2
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|relogio|divisorGenerico_e_Interface:interfaceBaseTempo
+clk => divisorgenerico:baseTempo.clk
+habilitaLeitura => leituraUmSegundo.OE
+limpaLeitura => flipflop:registraUmSegundo.RST
+leituraUmSegundo <= leituraUmSegundo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA

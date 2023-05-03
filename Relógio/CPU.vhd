@@ -7,7 +7,7 @@ entity CPU is
     WR: out std_logic;
 	 RD: out std_logic;
 	 rom_adr: out std_logic_vector(8 downto 0);
-	 instru_in: in std_logic_vector(15 downto 0);
+	 instru_in: in std_logic_vector(14 downto 0);
     data_adr: out std_logic_vector(8 downto 0);
 	 data_out: out std_logic_vector(7 downto 0);
 	 data_in: in std_logic_vector(7 downto 0);
@@ -87,7 +87,7 @@ ULA1 : entity work.ULASomaSub  generic map(larguraDados => 8)
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 			 
 DEC_INSTRUCAO : entity work.decoderInstru 
-          port map (opcode => instru_in(15 downto 12), saida => Sinais_Controle);
+          port map (opcode => instru_in(14 downto 11), saida => Sinais_Controle);
 
 			 
 MUX_PC :  entity work.muxGenerico4x1  generic map (larguraDados => 9)
@@ -107,9 +107,9 @@ REG_RETORNO : entity work.registradorGenerico   generic map (larguraDados => 9)
           port map (DIN => proxPC, DOUT => saida_retorno, ENABLE => habEscritaRetorno, CLK => CLK, RST => '0');
 			 
 			 
-RegMem : entity work.bancoRegistradoresArqRegMem   generic map (larguraDados => 8, larguraEndBancoRegs => 3)
+RegMem : entity work.bancoRegistradoresArqRegMem   generic map (larguraDados => 8, larguraEndBancoRegs => 2)
           port map ( clk => CLK,
-              endereco => instru_in(11 downto 9),
+              endereco => instru_in(10 downto 9),
               dadoEscrita => Saida_ULA,
               habilitaEscrita => Habilita_Reg,
               saida  => saida_reg_mem);			 

@@ -20,7 +20,7 @@ end entity;
 
 architecture arquitetura of Relogio is
   signal CLK : std_logic;
-  signal saida_ROM : std_logic_vector (15 downto 0);
+  signal saida_ROM : std_logic_vector (14 downto 0);
   signal entra_ROM : std_logic_vector (8 downto 0);
   signal saida_RAM : std_logic_vector (7 downto 0);
   signal habilita_ram: std_logic;
@@ -66,8 +66,7 @@ architecture arquitetura of Relogio is
   signal saida_ff_deb2: std_logic;
   signal limpaLeitura2: std_logic;
   
-  signal hab_leitura: std_logic;
-  signal limpa_leitura: std_logic;
+  
 
   
 begin
@@ -85,7 +84,7 @@ end generate;
 
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
-ROM1 : entity work.memoriaROM   generic map (dataWidth => 16, addrWidth => 9)
+ROM1 : entity work.memoriaROM   generic map (dataWidth => 15, addrWidth => 9)
           port map (Endereco => entra_ROM, Dado => saida_ROM);
 			 
 DEC1 :  entity work.decoder3x8
@@ -147,8 +146,8 @@ key_reset: entity work.buffer_3_state_8portas
 				
 				
 				
-debounce0: work.edgeDetector(bordaSubida)
-        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_deb0);
+--debounce0: work.edgeDetector(bordaSubida)
+--        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_deb0);
 		
 ff_debounce0: entity work.flipflop
         port map (DIN => '1', DOUT => saida_ff_deb0, ENABLE => '1', CLK => saida_deb0, RST => limpaLeitura0);
@@ -168,10 +167,10 @@ ff_debounce2: entity work.flipflop
 		  
 		  
 interfaceBaseTempo : entity work.divisorGenerico_e_Interface
-              port map (clk => CLK,
-              habilitaLeitura => sinalLocal,
-              limpaLeitura => sinalLocal,
-              leituraUmSegundo => sinalLocal);
+              port map (clk => CLOCK_50,
+              habilitaLeitura => hab_key0,
+             limpaLeitura => limpaLeitura0,
+              leituraUmSegundo => saida_deb0);
 		
 -- I/O
 --chavesY_MUX_A <= SW(3 downto 0);
