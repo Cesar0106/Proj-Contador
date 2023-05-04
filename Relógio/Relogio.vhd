@@ -119,7 +119,7 @@ display : entity work.display
 							 
 							 
 sw0a7: entity work.buffer_3_state_8portas
-            port map (entrada => SW (7 downto 0), habilita => hab_sw0a7, saida => saida_RAM);
+            port map (entrada => "0000" & SW (3 downto 0), habilita => hab_sw0a7, saida => saida_RAM);
 				
 sw8: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & SW(8), habilita => hab_sw8, saida => saida_RAM);
