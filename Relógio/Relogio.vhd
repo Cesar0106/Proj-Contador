@@ -130,8 +130,8 @@ sw0a7: entity work.buffer_3_state_8portas
 sw8: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & SW(8), habilita => hab_sw8, saida => saida_RAM);
 
-sw9: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & SW(9), habilita => hab_sw9, saida => saida_RAM);
+--sw9: entity work.buffer_3_state_8portas
+--            port map (entrada => "0000000" & SW(9), habilita => hab_sw9, saida => saida_RAM);
 				
 				
 				
@@ -180,7 +180,9 @@ ff_debounce3: entity work.flipflop
 		  
 		  
 interfaceBaseTempo : entity work.divisorGenerico_e_Interface
-              port map (clk => CLOCK_50,
+              port map (
+				  selMux => SW(9),
+				  clk => CLOCK_50,
               habilitaLeitura => hab_key0,
              limpaLeitura => limpaLeitura0,
               leituraUmSegundo => saida_deb0);

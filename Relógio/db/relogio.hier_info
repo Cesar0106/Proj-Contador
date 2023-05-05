@@ -22,7 +22,7 @@ SW[5] => buffer_3_state_8portas:sw0a7.entrada[5]
 SW[6] => buffer_3_state_8portas:sw0a7.entrada[6]
 SW[7] => buffer_3_state_8portas:sw0a7.entrada[7]
 SW[8] => buffer_3_state_8portas:sw8.entrada[0]
-SW[9] => buffer_3_state_8portas:sw9.entrada[0]
+SW[9] => divisorgenerico_e_interface:interfaceBaseTempo.selMux
 LEDR[0] <= registradorgenerico:REG8.DOUT[0]
 LEDR[1] <= registradorgenerico:REG8.DOUT[1]
 LEDR[2] <= registradorgenerico:REG8.DOUT[2]
@@ -1563,33 +1563,6 @@ saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
 saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|relogio|buffer_3_state_8portas:sw9
-entrada[0] => saida[0].DATAIN
-entrada[1] => saida[1].DATAIN
-entrada[2] => saida[2].DATAIN
-entrada[3] => saida[3].DATAIN
-entrada[4] => saida[4].DATAIN
-entrada[5] => saida[5].DATAIN
-entrada[6] => saida[6].DATAIN
-entrada[7] => saida[7].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
 |relogio|buffer_3_state_8portas:key0
 entrada[0] => saida[0].DATAIN
 entrada[1] => saida[1].DATAIN
@@ -1780,9 +1753,11 @@ RST => DOUT~reg0.ACLR
 
 |relogio|divisorGenerico_e_Interface:interfaceBaseTempo
 clk => divisorgenerico:baseTempo.clk
+clk => divisorgenerico:baseRapido.clk
 habilitaLeitura => leituraUmSegundo.OE
 limpaLeitura => flipflop:registraUmSegundo.RST
 leituraUmSegundo <= leituraUmSegundo.DB_MAX_OUTPUT_PORT_TYPE
+selMux => muxvelocidade:mux_Velocidade.seletor_MUX
 
 
 |relogio|divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo
@@ -1813,6 +1788,32 @@ clk => contador[22].CLK
 clk => contador[23].CLK
 clk => contador[24].CLK
 saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseRapido
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorGenerico_e_Interface:interfaceBaseTempo|muxVelocidade:mux_Velocidade
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogio|divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo

@@ -1,5 +1,5 @@
 Timing Analyzer report for relogio
-Thu May 04 21:29:59 2023
+Fri May 05 15:04:51 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -102,14 +102,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.53        ;
+; Average used               ; 1.51        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  18.1%      ;
-;     Processor 3            ;  17.6%      ;
-;     Processor 4            ;  17.2%      ;
+;     Processor 2            ;  17.6%      ;
+;     Processor 3            ;  16.8%      ;
+;     Processor 4            ;  16.7%      ;
 +----------------------------+-------------+
 
 
@@ -119,21 +119,21 @@ https://fpgasoftware.intel.com/eula.
 ; Clock Name                                                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                                            ;
 +--------------------------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------------------------------------------+
 ; CLOCK_50                                                                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                                                       ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick }  ;
 ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT } ;
 ; KEY[1]                                                                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[1] }                                                                         ;
 ; KEY[2]                                                                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[2] }                                                                         ;
 ; KEY[3]                                                                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[3] }                                                                         ;
+; SW[9]                                                                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[9] }                                                                          ;
 +--------------------------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary              ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 93.72 MHz ; 93.72 MHz       ; CLOCK_50   ;      ;
-+-----------+-----------------+------------+------+
++------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary             ;
++----------+-----------------+------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
++----------+-----------------+------------+------+
+; 93.9 MHz ; 93.9 MHz        ; CLOCK_50   ;      ;
++----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -148,7 +148,7 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -9.670 ; -4121.589       ;
+; CLOCK_50 ; -9.650 ; -4089.619       ;
 +----------+--------+-----------------+
 
 
@@ -157,7 +157,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 0.295 ; 0.000           ;
+; CLOCK_50 ; 0.285 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -166,11 +166,11 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -7.126 ; -7.126        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -6.353 ; -6.353        ;
-; KEY[2]                                                                         ; -4.731 ; -4.731        ;
-; KEY[3]                                                                         ; -4.428 ; -4.428        ;
-; KEY[1]                                                                         ; -4.389 ; -4.389        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -7.193 ; -7.193        ;
+; KEY[3]                                                                         ; -4.244 ; -4.244        ;
+; KEY[2]                                                                         ; -4.189 ; -4.189        ;
+; SW[9]                                                                          ; -3.958 ; -3.958        ;
+; KEY[1]                                                                         ; -3.891 ; -3.891        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -179,11 +179,11 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                          ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------+-------+---------------+
-; KEY[1]                                                                         ; 1.124 ; 0.000         ;
-; KEY[3]                                                                         ; 1.177 ; 0.000         ;
-; KEY[2]                                                                         ; 1.509 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 3.715 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 4.627 ; 0.000         ;
+; SW[9]                                                                          ; 1.070 ; 0.000         ;
+; KEY[1]                                                                         ; 1.113 ; 0.000         ;
+; KEY[3]                                                                         ; 1.441 ; 0.000         ;
+; KEY[2]                                                                         ; 1.515 ; 0.000         ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 4.657 ; 0.000         ;
 +--------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -192,12 +192,12 @@ HTML report is unavailable in plain text report export.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                       ; -0.538 ; -543.561      ;
-; KEY[3]                                                                         ; -0.538 ; -1.004        ;
-; KEY[1]                                                                         ; -0.538 ; -0.987        ;
-; KEY[2]                                                                         ; -0.538 ; -0.935        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -0.538 ; -0.862        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -0.538 ; -0.769        ;
+; SW[9]                                                                          ; -0.628 ; -1.166        ;
+; CLOCK_50                                                                       ; -0.538 ; -566.176      ;
+; KEY[2]                                                                         ; -0.538 ; -0.911        ;
+; KEY[3]                                                                         ; -0.538 ; -0.905        ;
+; KEY[1]                                                                         ; -0.538 ; -0.900        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -0.538 ; -0.770        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -212,7 +212,7 @@ No synchronizer chains to report.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 92.54 MHz ; 92.54 MHz       ; CLOCK_50   ;      ;
+; 94.22 MHz ; 94.22 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -222,7 +222,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -9.806 ; -4073.196      ;
+; CLOCK_50 ; -9.614 ; -4034.972      ;
 +----------+--------+----------------+
 
 
@@ -231,7 +231,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; CLOCK_50 ; 0.278 ; 0.000          ;
+; CLOCK_50 ; 0.270 ; 0.000          ;
 +----------+-------+----------------+
 
 
@@ -240,11 +240,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -7.328 ; -7.328        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -6.617 ; -6.617        ;
-; KEY[2]                                                                         ; -4.983 ; -4.983        ;
-; KEY[3]                                                                         ; -4.732 ; -4.732        ;
-; KEY[1]                                                                         ; -4.678 ; -4.678        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -7.335 ; -7.335        ;
+; KEY[3]                                                                         ; -4.500 ; -4.500        ;
+; KEY[2]                                                                         ; -4.325 ; -4.325        ;
+; SW[9]                                                                          ; -4.226 ; -4.226        ;
+; KEY[1]                                                                         ; -4.171 ; -4.171        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -253,11 +253,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                          ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------+-------+---------------+
-; KEY[3]                                                                         ; 1.228 ; 0.000         ;
-; KEY[1]                                                                         ; 1.333 ; 0.000         ;
-; KEY[2]                                                                         ; 1.511 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 3.882 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 4.723 ; 0.000         ;
+; KEY[1]                                                                         ; 1.284 ; 0.000         ;
+; SW[9]                                                                          ; 1.351 ; 0.000         ;
+; KEY[3]                                                                         ; 1.544 ; 0.000         ;
+; KEY[2]                                                                         ; 1.575 ; 0.000         ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 4.805 ; 0.000         ;
 +--------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -266,12 +266,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                       ; -0.538 ; -484.102      ;
-; KEY[3]                                                                         ; -0.538 ; -1.046        ;
-; KEY[1]                                                                         ; -0.538 ; -0.971        ;
-; KEY[2]                                                                         ; -0.538 ; -0.949        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -0.538 ; -0.851        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -0.538 ; -0.774        ;
+; SW[9]                                                                          ; -0.677 ; -1.215        ;
+; CLOCK_50                                                                       ; -0.538 ; -501.055      ;
+; KEY[2]                                                                         ; -0.538 ; -0.942        ;
+; KEY[3]                                                                         ; -0.538 ; -0.906        ;
+; KEY[1]                                                                         ; -0.538 ; -0.897        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -0.538 ; -0.771        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -286,7 +286,7 @@ No synchronizer chains to report.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -4.473 ; -1853.312       ;
+; CLOCK_50 ; -4.329 ; -1751.669       ;
 +----------+--------+-----------------+
 
 
@@ -295,7 +295,7 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -0.229 ; -0.376         ;
+; CLOCK_50 ; -0.060 ; -0.060         ;
 +----------+--------+----------------+
 
 
@@ -304,11 +304,11 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -3.176 ; -3.176        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -2.741 ; -2.741        ;
-; KEY[2]                                                                         ; -1.880 ; -1.880        ;
-; KEY[1]                                                                         ; -1.683 ; -1.683        ;
-; KEY[3]                                                                         ; -1.658 ; -1.658        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -3.282 ; -3.282        ;
+; SW[9]                                                                          ; -1.779 ; -1.779        ;
+; KEY[3]                                                                         ; -1.565 ; -1.565        ;
+; KEY[2]                                                                         ; -1.484 ; -1.484        ;
+; KEY[1]                                                                         ; -1.414 ; -1.414        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -317,11 +317,11 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                          ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------+-------+---------------+
-; KEY[1]                                                                         ; 0.205 ; 0.000         ;
-; KEY[3]                                                                         ; 0.269 ; 0.000         ;
-; KEY[2]                                                                         ; 0.396 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 1.597 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 2.109 ; 0.000         ;
+; KEY[1]                                                                         ; 0.280 ; 0.000         ;
+; KEY[2]                                                                         ; 0.409 ; 0.000         ;
+; KEY[3]                                                                         ; 0.454 ; 0.000         ;
+; SW[9]                                                                          ; 0.545 ; 0.000         ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 2.162 ; 0.000         ;
 +--------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -330,12 +330,12 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                       ; -0.569 ; -277.515      ;
-; KEY[1]                                                                         ; -0.562 ; -1.639        ;
-; KEY[3]                                                                         ; -0.528 ; -1.517        ;
-; KEY[2]                                                                         ; -0.495 ; -1.398        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 0.043  ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 0.144  ; 0.000         ;
+; SW[9]                                                                          ; -0.759 ; -1.968        ;
+; KEY[1]                                                                         ; -0.497 ; -1.461        ;
+; KEY[2]                                                                         ; -0.494 ; -1.438        ;
+; KEY[3]                                                                         ; -0.477 ; -1.295        ;
+; CLOCK_50                                                                       ; -0.409 ; -291.195      ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 0.145  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -350,7 +350,7 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -4.012 ; -1625.865      ;
+; CLOCK_50 ; -3.870 ; -1528.161      ;
 +----------+--------+----------------+
 
 
@@ -359,7 +359,7 @@ No synchronizer chains to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -0.322 ; -1.058        ;
+; CLOCK_50 ; -0.166 ; -0.166        ;
 +----------+--------+---------------+
 
 
@@ -368,11 +368,11 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -2.950 ; -2.950        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; -2.562 ; -2.562        ;
-; KEY[2]                                                                         ; -1.683 ; -1.683        ;
-; KEY[3]                                                                         ; -1.515 ; -1.515        ;
-; KEY[1]                                                                         ; -1.490 ; -1.490        ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; -3.025 ; -3.025        ;
+; SW[9]                                                                          ; -1.616 ; -1.616        ;
+; KEY[3]                                                                         ; -1.368 ; -1.368        ;
+; KEY[2]                                                                         ; -1.298 ; -1.298        ;
+; KEY[1]                                                                         ; -1.212 ; -1.212        ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -381,11 +381,11 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                          ; Slack ; End Point TNS ;
 +--------------------------------------------------------------------------------+-------+---------------+
-; KEY[1]                                                                         ; 0.175 ; 0.000         ;
-; KEY[3]                                                                         ; 0.234 ; 0.000         ;
-; KEY[2]                                                                         ; 0.349 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 1.549 ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 2.005 ; 0.000         ;
+; KEY[1]                                                                         ; 0.230 ; 0.000         ;
+; KEY[2]                                                                         ; 0.343 ; 0.000         ;
+; KEY[3]                                                                         ; 0.401 ; 0.000         ;
+; SW[9]                                                                          ; 0.551 ; 0.000         ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 2.064 ; 0.000         ;
 +--------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -394,12 +394,12 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                          ; Slack  ; End Point TNS ;
 +--------------------------------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                                       ; -0.610 ; -333.042      ;
-; KEY[1]                                                                         ; -0.600 ; -1.818        ;
-; KEY[3]                                                                         ; -0.582 ; -1.738        ;
-; KEY[2]                                                                         ; -0.548 ; -1.631        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 0.063  ; 0.000         ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 0.143  ; 0.000         ;
+; SW[9]                                                                          ; -0.777 ; -2.113        ;
+; KEY[2]                                                                         ; -0.559 ; -1.683        ;
+; KEY[3]                                                                         ; -0.559 ; -1.616        ;
+; KEY[1]                                                                         ; -0.543 ; -1.658        ;
+; CLOCK_50                                                                       ; -0.446 ; -347.137      ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 0.147  ; 0.000         ;
 +--------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -414,20 +414,20 @@ No synchronizer chains to report.
 +---------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                                                                           ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                                ; -9.806    ; -0.322 ; -7.328   ; 0.175   ; -0.610              ;
-;  CLOCK_50                                                                       ; -9.806    ; -0.322 ; N/A      ; N/A     ; -0.610              ;
-;  KEY[1]                                                                         ; N/A       ; N/A    ; -4.678   ; 0.175   ; -0.600              ;
-;  KEY[2]                                                                         ; N/A       ; N/A    ; -4.983   ; 0.349   ; -0.548              ;
-;  KEY[3]                                                                         ; N/A       ; N/A    ; -4.732   ; 0.234   ; -0.582              ;
-;  divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; N/A       ; N/A    ; -6.617   ; 1.549   ; -0.538              ;
-;  divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; N/A       ; N/A    ; -7.328   ; 2.005   ; -0.538              ;
-; Design-wide TNS                                                                 ; -4121.589 ; -1.058 ; -28.338  ; 0.0     ; -548.118            ;
-;  CLOCK_50                                                                       ; -4121.589 ; -1.058 ; N/A      ; N/A     ; -543.561            ;
-;  KEY[1]                                                                         ; N/A       ; N/A    ; -4.678   ; 0.000   ; -1.818              ;
-;  KEY[2]                                                                         ; N/A       ; N/A    ; -4.983   ; 0.000   ; -1.631              ;
-;  KEY[3]                                                                         ; N/A       ; N/A    ; -4.732   ; 0.000   ; -1.738              ;
-;  divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; N/A       ; N/A    ; -6.617   ; 0.000   ; -0.862              ;
-;  divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; N/A       ; N/A    ; -7.328   ; 0.000   ; -0.774              ;
+; Worst-case Slack                                                                ; -9.650    ; -0.166 ; -7.335   ; 0.230   ; -0.777              ;
+;  CLOCK_50                                                                       ; -9.650    ; -0.166 ; N/A      ; N/A     ; -0.538              ;
+;  KEY[1]                                                                         ; N/A       ; N/A    ; -4.171   ; 0.230   ; -0.543              ;
+;  KEY[2]                                                                         ; N/A       ; N/A    ; -4.325   ; 0.343   ; -0.559              ;
+;  KEY[3]                                                                         ; N/A       ; N/A    ; -4.500   ; 0.401   ; -0.559              ;
+;  SW[9]                                                                          ; N/A       ; N/A    ; -4.226   ; 0.545   ; -0.777              ;
+;  divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; N/A       ; N/A    ; -7.335   ; 2.064   ; -0.538              ;
+; Design-wide TNS                                                                 ; -4089.619 ; -0.166 ; -24.557  ; 0.0     ; -570.828            ;
+;  CLOCK_50                                                                       ; -4089.619 ; -0.166 ; N/A      ; N/A     ; -566.176            ;
+;  KEY[1]                                                                         ; N/A       ; N/A    ; -4.171   ; 0.000   ; -1.658              ;
+;  KEY[2]                                                                         ; N/A       ; N/A    ; -4.325   ; 0.000   ; -1.683              ;
+;  KEY[3]                                                                         ; N/A       ; N/A    ; -4.500   ; 0.000   ; -1.616              ;
+;  SW[9]                                                                          ; N/A       ; N/A    ; -4.226   ; 0.000   ; -2.113              ;
+;  divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; N/A       ; N/A    ; -7.335   ; 0.000   ; -0.771              ;
 +---------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -500,7 +500,6 @@ No synchronizer chains to report.
 ; CLOCK_50     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[0]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[8]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[9]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; FPGA_RESET_N ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[1]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[2]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -512,6 +511,7 @@ No synchronizer chains to report.
 ; KEY[1]       ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[2]       ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[3]       ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[9]        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 +--------------+--------------+-----------------+-----------------+
 
 
@@ -760,8 +760,7 @@ No synchronizer chains to report.
 +--------------------------------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                                                     ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                                       ; CLOCK_50 ; 386981   ; 0        ; 0        ; 0        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; CLOCK_50 ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                                                       ; CLOCK_50 ; 388901   ; 0        ; 0        ; 0        ;
 ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; CLOCK_50 ; 18       ; 0        ; 0        ; 0        ;
 ; KEY[1]                                                                         ; CLOCK_50 ; 1        ; 19       ; 0        ; 0        ;
 ; KEY[2]                                                                         ; CLOCK_50 ; 1        ; 19       ; 0        ; 0        ;
@@ -775,8 +774,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                                                     ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                                       ; CLOCK_50 ; 386981   ; 0        ; 0        ; 0        ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; CLOCK_50 ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                                                                       ; CLOCK_50 ; 388901   ; 0        ; 0        ; 0        ;
 ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; CLOCK_50 ; 18       ; 0        ; 0        ; 0        ;
 ; KEY[1]                                                                         ; CLOCK_50 ; 1        ; 19       ; 0        ; 0        ;
 ; KEY[2]                                                                         ; CLOCK_50 ; 1        ; 19       ; 0        ; 0        ;
@@ -790,11 +788,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                                                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 345      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 345      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; KEY[1]                                                                         ; 0        ; 0        ; 345      ; 0        ;
-; CLOCK_50   ; KEY[2]                                                                         ; 0        ; 0        ; 345      ; 0        ;
-; CLOCK_50   ; KEY[3]                                                                         ; 0        ; 0        ; 345      ; 0        ;
+; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 344      ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; KEY[1]                                                                         ; 0        ; 0        ; 344      ; 0        ;
+; CLOCK_50   ; KEY[2]                                                                         ; 0        ; 0        ; 344      ; 0        ;
+; CLOCK_50   ; KEY[3]                                                                         ; 0        ; 0        ; 343      ; 0        ;
+; CLOCK_50   ; SW[9]                                                                          ; 344      ; 0        ; 0        ; 0        ;
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -804,11 +802,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock ; To Clock                                                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; 345      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 345      ; 0        ; 0        ; 0        ;
-; CLOCK_50   ; KEY[1]                                                                         ; 0        ; 0        ; 345      ; 0        ;
-; CLOCK_50   ; KEY[2]                                                                         ; 0        ; 0        ; 345      ; 0        ;
-; CLOCK_50   ; KEY[3]                                                                         ; 0        ; 0        ; 345      ; 0        ;
+; CLOCK_50   ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; 344      ; 0        ; 0        ; 0        ;
+; CLOCK_50   ; KEY[1]                                                                         ; 0        ; 0        ; 344      ; 0        ;
+; CLOCK_50   ; KEY[2]                                                                         ; 0        ; 0        ; 344      ; 0        ;
+; CLOCK_50   ; KEY[3]                                                                         ; 0        ; 0        ; 343      ; 0        ;
+; CLOCK_50   ; SW[9]                                                                          ; 344      ; 0        ; 0        ; 0        ;
 +------------+--------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -832,8 +830,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 11    ; 11   ;
-; Unconstrained Input Port Paths  ; 71    ; 71   ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 62    ; 62   ;
 ; Unconstrained Output Ports      ; 52    ; 52   ;
 ; Unconstrained Output Port Paths ; 178   ; 178  ;
 +---------------------------------+-------+------+
@@ -848,7 +846,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; KEY[1]                                                                         ; KEY[1]                                                                         ; Base ; Constrained ;
 ; KEY[2]                                                                         ; KEY[2]                                                                         ; Base ; Constrained ;
 ; KEY[3]                                                                         ; KEY[3]                                                                         ; Base ; Constrained ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick  ; Base ; Constrained ;
+; SW[9]                                                                          ; SW[9]                                                                          ; Base ; Constrained ;
 ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT ; Base ; Constrained ;
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------+-------------+
 
@@ -868,7 +866,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[6]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[7]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[8]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +--------------+--------------------------------------------------------------------------------------+
 
 
@@ -947,7 +944,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[6]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[7]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[8]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +--------------+--------------------------------------------------------------------------------------+
 
 
@@ -1017,7 +1013,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 04 21:29:52 2023
+    Info: Processing started: Fri May 05 15:04:45 2023
 Info: Command: quartus_sta relogio -c relogio
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1028,171 +1024,179 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'rel
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
-    Info (332105): create_clock -period 1.000 -name KEY[2] KEY[2]
     Info (332105): create_clock -period 1.000 -name KEY[1] KEY[1]
+    Info (332105): create_clock -period 1.000 -name KEY[2] KEY[2]
     Info (332105): create_clock -period 1.000 -name KEY[3] KEY[3]
     Info (332105): create_clock -period 1.000 -name divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT
-    Info (332105): create_clock -period 1.000 -name divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick
+    Info (332105): create_clock -period 1.000 -name SW[9] SW[9]
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: interfaceBaseTempo|mux_Velocidade|saida_MUX  from: dataf  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.670
+Info (332146): Worst-case setup slack is -9.650
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.670           -4121.589 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.295
+    Info (332119):    -9.650           -4089.619 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.285
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.295               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.126
+    Info (332119):     0.285               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.193
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.126              -7.126 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-    Info (332119):    -6.353              -6.353 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -4.731              -4.731 KEY[2] 
-    Info (332119):    -4.428              -4.428 KEY[3] 
-    Info (332119):    -4.389              -4.389 KEY[1] 
-Info (332146): Worst-case removal slack is 1.124
+    Info (332119):    -7.193              -7.193 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -4.244              -4.244 KEY[3] 
+    Info (332119):    -4.189              -4.189 KEY[2] 
+    Info (332119):    -3.958              -3.958 SW[9] 
+    Info (332119):    -3.891              -3.891 KEY[1] 
+Info (332146): Worst-case removal slack is 1.070
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.124               0.000 KEY[1] 
-    Info (332119):     1.177               0.000 KEY[3] 
-    Info (332119):     1.509               0.000 KEY[2] 
-    Info (332119):     3.715               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     4.627               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     1.070               0.000 SW[9] 
+    Info (332119):     1.113               0.000 KEY[1] 
+    Info (332119):     1.441               0.000 KEY[3] 
+    Info (332119):     1.515               0.000 KEY[2] 
+    Info (332119):     4.657               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+Info (332146): Worst-case minimum pulse width slack is -0.628
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -543.561 CLOCK_50 
-    Info (332119):    -0.538              -1.004 KEY[3] 
-    Info (332119):    -0.538              -0.987 KEY[1] 
-    Info (332119):    -0.538              -0.935 KEY[2] 
-    Info (332119):    -0.538              -0.862 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -0.538              -0.769 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -0.628              -1.166 SW[9] 
+    Info (332119):    -0.538            -566.176 CLOCK_50 
+    Info (332119):    -0.538              -0.911 KEY[2] 
+    Info (332119):    -0.538              -0.905 KEY[3] 
+    Info (332119):    -0.538              -0.900 KEY[1] 
+    Info (332119):    -0.538              -0.770 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: interfaceBaseTempo|mux_Velocidade|saida_MUX  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.806
+Info (332146): Worst-case setup slack is -9.614
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.806           -4073.196 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.278
+    Info (332119):    -9.614           -4034.972 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.270
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.278               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.328
+    Info (332119):     0.270               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.335
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.328              -7.328 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-    Info (332119):    -6.617              -6.617 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -4.983              -4.983 KEY[2] 
-    Info (332119):    -4.732              -4.732 KEY[3] 
-    Info (332119):    -4.678              -4.678 KEY[1] 
-Info (332146): Worst-case removal slack is 1.228
+    Info (332119):    -7.335              -7.335 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -4.500              -4.500 KEY[3] 
+    Info (332119):    -4.325              -4.325 KEY[2] 
+    Info (332119):    -4.226              -4.226 SW[9] 
+    Info (332119):    -4.171              -4.171 KEY[1] 
+Info (332146): Worst-case removal slack is 1.284
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.228               0.000 KEY[3] 
-    Info (332119):     1.333               0.000 KEY[1] 
-    Info (332119):     1.511               0.000 KEY[2] 
-    Info (332119):     3.882               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     4.723               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     1.284               0.000 KEY[1] 
+    Info (332119):     1.351               0.000 SW[9] 
+    Info (332119):     1.544               0.000 KEY[3] 
+    Info (332119):     1.575               0.000 KEY[2] 
+    Info (332119):     4.805               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+Info (332146): Worst-case minimum pulse width slack is -0.677
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -484.102 CLOCK_50 
-    Info (332119):    -0.538              -1.046 KEY[3] 
-    Info (332119):    -0.538              -0.971 KEY[1] 
-    Info (332119):    -0.538              -0.949 KEY[2] 
-    Info (332119):    -0.538              -0.851 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -0.538              -0.774 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -0.677              -1.215 SW[9] 
+    Info (332119):    -0.538            -501.055 CLOCK_50 
+    Info (332119):    -0.538              -0.942 KEY[2] 
+    Info (332119):    -0.538              -0.906 KEY[3] 
+    Info (332119):    -0.538              -0.897 KEY[1] 
+    Info (332119):    -0.538              -0.771 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: interfaceBaseTempo|mux_Velocidade|saida_MUX  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.473
+Info (332146): Worst-case setup slack is -4.329
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.473           -1853.312 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.229
+    Info (332119):    -4.329           -1751.669 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.060
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.229              -0.376 CLOCK_50 
-Info (332146): Worst-case recovery slack is -3.176
+    Info (332119):    -0.060              -0.060 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.282
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.176              -3.176 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-    Info (332119):    -2.741              -2.741 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -1.880              -1.880 KEY[2] 
-    Info (332119):    -1.683              -1.683 KEY[1] 
-    Info (332119):    -1.658              -1.658 KEY[3] 
-Info (332146): Worst-case removal slack is 0.205
+    Info (332119):    -3.282              -3.282 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -1.779              -1.779 SW[9] 
+    Info (332119):    -1.565              -1.565 KEY[3] 
+    Info (332119):    -1.484              -1.484 KEY[2] 
+    Info (332119):    -1.414              -1.414 KEY[1] 
+Info (332146): Worst-case removal slack is 0.280
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.205               0.000 KEY[1] 
-    Info (332119):     0.269               0.000 KEY[3] 
-    Info (332119):     0.396               0.000 KEY[2] 
-    Info (332119):     1.597               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     2.109               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-Info (332146): Worst-case minimum pulse width slack is -0.569
+    Info (332119):     0.280               0.000 KEY[1] 
+    Info (332119):     0.409               0.000 KEY[2] 
+    Info (332119):     0.454               0.000 KEY[3] 
+    Info (332119):     0.545               0.000 SW[9] 
+    Info (332119):     2.162               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+Info (332146): Worst-case minimum pulse width slack is -0.759
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.569            -277.515 CLOCK_50 
-    Info (332119):    -0.562              -1.639 KEY[1] 
-    Info (332119):    -0.528              -1.517 KEY[3] 
-    Info (332119):    -0.495              -1.398 KEY[2] 
-    Info (332119):     0.043               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     0.144               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -0.759              -1.968 SW[9] 
+    Info (332119):    -0.497              -1.461 KEY[1] 
+    Info (332119):    -0.494              -1.438 KEY[2] 
+    Info (332119):    -0.477              -1.295 KEY[3] 
+    Info (332119):    -0.409            -291.195 CLOCK_50 
+    Info (332119):     0.145               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
 Info: Analyzing Fast 1100mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: interfaceBaseTempo|mux_Velocidade|saida_MUX  from: dataf  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.012
+Info (332146): Worst-case setup slack is -3.870
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.012           -1625.865 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.322
+    Info (332119):    -3.870           -1528.161 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.166
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.322              -1.058 CLOCK_50 
-Info (332146): Worst-case recovery slack is -2.950
+    Info (332119):    -0.166              -0.166 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.025
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.950              -2.950 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-    Info (332119):    -2.562              -2.562 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):    -1.683              -1.683 KEY[2] 
-    Info (332119):    -1.515              -1.515 KEY[3] 
-    Info (332119):    -1.490              -1.490 KEY[1] 
-Info (332146): Worst-case removal slack is 0.175
+    Info (332119):    -3.025              -3.025 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -1.616              -1.616 SW[9] 
+    Info (332119):    -1.368              -1.368 KEY[3] 
+    Info (332119):    -1.298              -1.298 KEY[2] 
+    Info (332119):    -1.212              -1.212 KEY[1] 
+Info (332146): Worst-case removal slack is 0.230
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.175               0.000 KEY[1] 
-    Info (332119):     0.234               0.000 KEY[3] 
-    Info (332119):     0.349               0.000 KEY[2] 
-    Info (332119):     1.549               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     2.005               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
-Info (332146): Worst-case minimum pulse width slack is -0.610
+    Info (332119):     0.230               0.000 KEY[1] 
+    Info (332119):     0.343               0.000 KEY[2] 
+    Info (332119):     0.401               0.000 KEY[3] 
+    Info (332119):     0.551               0.000 SW[9] 
+    Info (332119):     2.064               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+Info (332146): Worst-case minimum pulse width slack is -0.777
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.610            -333.042 CLOCK_50 
-    Info (332119):    -0.600              -1.818 KEY[1] 
-    Info (332119):    -0.582              -1.738 KEY[3] 
-    Info (332119):    -0.548              -1.631 KEY[2] 
-    Info (332119):     0.063               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick 
-    Info (332119):     0.143               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
+    Info (332119):    -0.777              -2.113 SW[9] 
+    Info (332119):    -0.559              -1.683 KEY[2] 
+    Info (332119):    -0.559              -1.616 KEY[3] 
+    Info (332119):    -0.543              -1.658 KEY[1] 
+    Info (332119):    -0.446            -347.137 CLOCK_50 
+    Info (332119):     0.147               0.000 divisorGenerico_e_Interface:interfaceBaseTempo|flipflop:registraUmSegundo|DOUT 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5086 megabytes
-    Info: Processing ended: Thu May 04 21:29:59 2023
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 5088 megabytes
+    Info: Processing ended: Fri May 05 15:04:51 2023
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:09
 
 

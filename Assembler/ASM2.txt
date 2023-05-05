@@ -276,6 +276,6 @@ STA @5
 STA @27
 RET
 
-ACELERA:
+
 
 

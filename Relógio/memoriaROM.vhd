@@ -320,8 +320,8 @@ architecture assincrona of memoriaROM is
 
 
 
-
-			tmp(179) := "000000000000000";	-- SET_HORA:
+--SET_HORA:
+			tmp(179) := "000000000000000";	-- SET_HORA: 
 			tmp(180)   := JSR & "00"  & '0' & x"B6"; --JSR R0,SET_HORA_DEZENA_MILHAR
 			tmp(181)   := JMP & "00"  & '0' & x"4B"; --JMP R0,PULA1
 
@@ -333,14 +333,15 @@ architecture assincrona of memoriaROM is
 			tmp(185) := SOMA  & "00"  & '0' & x"07"; --SOMA R0,@7
 			tmp(186) := STA & "00"  & '0' & x"1B"; --STA R0,@27
 			tmp(187) := CEQ & "00"  & '0' & x"30"; --CEQ R0,@48
+
 			tmp(188) := JEQ & "00"  & '0' & x"CA"; --JEQ R0,OVERFLOW_HORA --PULA PARA OVERFLOW_HORA
 			tmp(189) := LDA & "00"  & '0' & x"04"; --LDA R0,@4
 			tmp(190) := SOMA  & "00"  & '0' & x"07"; --SOMA R0,@7
 			tmp(191) := STA & "00"  & '0' & x"04"; --STA R0,@4
-			tmp(192) := CEQ & "00"  & '0' & x"10"; --CEQ R0,@10
+			tmp(192) := CEQ & "00"  & '0' & x"0A"; --CEQ R0,@10
 			tmp(193) := JEQ & "00"  & '0' & x"C3"; --JEQ R0,SET_HORA_CENTENA_MILHAR --PULA PARA SET_HORA_CENTENA_MILHAR
 			tmp(194) := "101000000000000";	-- RET
-
+--C3: 
 			tmp(195) := "000000000000000";	--SET_HORA_CENTENA_MILHAR:
 			tmp(196) := LDI & "00"  & '0' & x"00"; --LDI R0,$0
 			tmp(197) := STA & "00"  & '0' & x"04"; --STA R0,@4
@@ -349,15 +350,14 @@ architecture assincrona of memoriaROM is
 			tmp(200) := STA & "00"  & '0' & x"05"; --STA R0,@5
 			tmp(201) := "101000000000000";	-- RET
 
-
+--OVERFLOW_HORA:
 			tmp(202) := "000000000000000";	--OVERFLOW_HORA:
 			tmp(203) := LDI & "00"  & '0' & x"00"; --LDI R0,$0
 			tmp(204) := STA & "00"  & '0' & x"04"; --STA R0,@4
 			tmp(205) := STA & "00"  & '0' & x"05"; --STA R0,@5
 			tmp(206) := STA & "00"  & '0' & x"1B"; --STA R0,@27
 			tmp(207) := "101000000000000";	-- RET
-			
-			tmp(208) := "000000000000000";	--ACELERA:
+		
 
 
 
