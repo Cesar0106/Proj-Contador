@@ -59,12 +59,18 @@ architecture arquitetura of Relogio is
   signal saida_deb0 : std_logic;
   signal saida_ff_deb0: std_logic;
   signal limpaLeitura0: std_logic;
+  
   signal saida_deb1 : std_logic;
   signal saida_ff_deb1: std_logic;
   signal limpaLeitura1: std_logic;
+  
   signal saida_deb2 : std_logic;
   signal saida_ff_deb2: std_logic;
   signal limpaLeitura2: std_logic;
+  
+  signal saida_deb3 : std_logic;
+  signal saida_ff_deb3: std_logic;
+  signal limpaLeitura3: std_logic;
   
   
 
@@ -119,7 +125,7 @@ display : entity work.display
 							 
 							 
 sw0a7: entity work.buffer_3_state_8portas
-            port map (entrada => "0000" & SW (3 downto 0), habilita => hab_sw0a7, saida => saida_RAM);
+            port map (entrada => SW (7 downto 0), habilita => hab_sw0a7, saida => saida_RAM);
 				
 sw8: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & SW(8), habilita => hab_sw8, saida => saida_RAM);
@@ -139,7 +145,7 @@ key2: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & saida_ff_deb2, habilita => hab_key2, saida => saida_RAM);	
 		
 key3: entity work.buffer_3_state_8portas
-            port map (entrada => "0000000" & KEY(3), habilita => hab_key3, saida => saida_RAM);	
+            port map (entrada => "0000000" & saida_ff_deb3, habilita => hab_key3, saida => saida_RAM);	
 		
 key_reset: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & FPGA_RESET_N, habilita => hab_reset, saida => saida_RAM);	
@@ -163,6 +169,13 @@ debounce2: work.edgeDetector(bordaSubida)
 		
 ff_debounce2: entity work.flipflop
         port map (DIN => '1', DOUT => saida_ff_deb2, ENABLE => '1', CLK => saida_deb2, RST => limpaLeitura2);
+		  
+		  
+debounce3: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => saida_deb3);
+		
+ff_debounce3: entity work.flipflop
+        port map (DIN => '1', DOUT => saida_ff_deb3, ENABLE => '1', CLK => saida_deb3, RST => limpaLeitura3);
 		  
 		  
 		  
@@ -203,6 +216,9 @@ limpaLeitura1 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_ad
 						
 limpaLeitura2 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
                   and data_adr(3) and data_adr(2) and (not data_adr(1)) and data_adr(0));
+						
+limpaLeitura3 <= (wr and data_adr(8) and data_adr(7) and data_adr(6) and data_adr(5) and data_adr(4)
+                  and data_adr(3) and data_adr(2) and (not data_adr(1)) and (not data_adr(0)));
 
 						
 						
