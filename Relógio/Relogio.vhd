@@ -130,9 +130,7 @@ sw0a7: entity work.buffer_3_state_8portas
 sw8: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & SW(8), habilita => hab_sw8, saida => saida_RAM);
 
---sw9: entity work.buffer_3_state_8portas
---            port map (entrada => "0000000" & SW(9), habilita => hab_sw9, saida => saida_RAM);
-				
+
 				
 				
 key0: entity work.buffer_3_state_8portas
@@ -151,9 +149,8 @@ key_reset: entity work.buffer_3_state_8portas
             port map (entrada => "0000000" & FPGA_RESET_N, habilita => hab_reset, saida => saida_RAM);	
 				
 				
+
 				
---debounce0: work.edgeDetector(bordaSubida)
---        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => saida_deb0);
 		
 ff_debounce0: entity work.flipflop
         port map (DIN => '1', DOUT => saida_ff_deb0, ENABLE => '1', CLK => saida_deb0, RST => limpaLeitura0);

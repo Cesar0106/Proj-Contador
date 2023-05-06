@@ -27,7 +27,7 @@ baseTempo: entity work.divisorGenerico
 			  
 			  
 baseRapido: entity work.divisorGenerico
-           generic map (divisor => 25000000/1800)   -- divide por 10.
+           generic map (divisor => 25000)   -- divide por 10.
            port map (clk => clk, saida_clk => saidaclk_regrapido);
 			  
 
