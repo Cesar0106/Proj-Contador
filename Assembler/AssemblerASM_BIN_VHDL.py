@@ -192,9 +192,9 @@ with open(outputBIN, "w+") as f:  #Abre o destino BIN
                         registrador = line.split(',')[0].split(' ')[1]
                         if line.split(',')[0].split(' ')[0].endswith("\n") == False and "R" in line:
                             registrador = regs[registrador]
-
+        
             if len(line) > 5:
-                if "SOMA" in line:
+                if "SOMA" in line[:9]:
                     instrucaoLine = instrucaoLine[:4] + " & " + f'"{registrador}"' + instrucaoLine[7:]
                     line = 'tmp(' + str(cont) + ') := ' + instrucaoLine +  '";\t-- ' + comentarioLine + '\n'
                 else:
