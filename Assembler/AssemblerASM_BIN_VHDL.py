@@ -20,6 +20,11 @@ mne =	{
        "RET":   "A",
 }
 
+regs = {"R0": "00",
+        "R1": "01",
+        "R2": "10",
+        "R3": "11",}
+
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
 def  converteArroba(line):
@@ -131,13 +136,14 @@ with open(outputBIN, "w+") as f:  #Abre o destino BIN
                 dict_labels[label] = cont
                 lines[cont]="NOP"+" "+comentario
         cont+=1
+    cont = 0
 
     cont = 0
     for line in lines:        
         if (" ") in line:
             if line.split(" ")[1] in dict_labels.keys():
                 label = line.split(" ")[1]
-                line = line.replace(line, "JEQ" + " " + "@" + f"{dict_labels[label]}") 
+                line = line.replace(line, "JEQ" + " " + "@" + f"{dict_labels[label]}")
 
         #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
@@ -154,39 +160,63 @@ with open(outputBIN, "w+") as f:  #Abre o destino BIN
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             
             instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+            
                   
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 if noveBits == False:
                     instrucaoLine = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
                 else:
                     instrucaoLine = converteArroba9bits(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
-                    
+              
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$'
                 if noveBits == False:
                     instrucaoLine = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
                 else:
                     instrucaoLine = converteCifrao9bits(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-                
+                    
             else: #Senão, se a instrução nao possuir nenhum imediato, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 if noveBits == False:
                     instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
                 else:
                     instrucaoLine = instrucaoLine + "\" & " + "\'0\' & " + "x\"00" #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
-                
+
+
             for instru in mne:
                 if mne[instru] == instrucaoLine[0]:
                     instrucaoLine=instru+instrucaoLine[2:]
-            line = 'tmp(' + str(cont) + ') := ' + instrucaoLine + '";\t-- ' + comentarioLine + '\n'   #Formata para o arquivo BIN
+
+            if line.split(','):
+                if line.split(',')[0].split(' '):
+                    if 'RET' not in line.split(',')[0].split(' ')[0]:
+                        registrador = line.split(',')[0].split(' ')[1]
+                        if line.split(',')[0].split(' ')[0].endswith("\n") == False and "R" in line:
+                            registrador = regs[registrador]
+
+            if len(line) > 5:
+                if "SOMA" in line:
+                    instrucaoLine = instrucaoLine[:4] + " & " + f'"{registrador}"' + instrucaoLine[7:]
+                    line = 'tmp(' + str(cont) + ') := ' + instrucaoLine +  '";\t-- ' + comentarioLine + '\n'
+                else:
+                    if "NOP" in instrucaoLine:
+                        line = 'tmp(' + str(cont) + ') := ' + "NOP"+  " & " + '"00" ' + '& ' + "'0' " + "& " + 'x"00"' + ';\t-- ' + comentarioLine + '\n'
+                    else:
+                        instrucaoLine = instrucaoLine[:3] + " & " + f'"{registrador}"' + instrucaoLine[6:]
+                        line = 'tmp(' + str(cont) + ') := ' + instrucaoLine +  '";\t-- ' + comentarioLine + '\n'
+            elif len(line) == 5:
+                line = 'tmp(' + str(cont) + ') := ' + "NOP"+  " & " + '"00" ' + '& ' + "'0' " + "& " + 'x"00"' + ';\t-- ' + comentarioLine + '\n'
+            else:
+                line = 'tmp(' + str(cont) + ') := ' + "RET"+  " & " + '"00" ' + '& ' + "'0' " + "& " + 'x"00"' + ';\t-- ' + comentarioLine + '\n'
+
+               #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
-                                                                                                       #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
-                                        
+                                                                                                       #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1                          
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt
             
             print(line,end = '') #Print apenas para debug
-            
-            
+
+print(dict_labels)  
 with open(outputMIF, "r") as f: #Abre o arquivo de MIF
     headerMIF = f.readlines() #Faz a leitura das linhas do arquivo,
                               #para fazer a aquisição do header
