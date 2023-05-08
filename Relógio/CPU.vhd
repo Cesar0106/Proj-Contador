@@ -68,9 +68,7 @@ MUX_ULA :  entity work.muxGenerico2x1  generic map (larguraDados => 8)
                  seletor_MUX => SelMUX,
                  saida_MUX => saida_MUX_ULA);
 
--- O port map completo do Acumulador.
---REGA : entity work.registradorGenerico   generic map (larguraDados => 8)
---          port map (DIN => Saida_ULA, DOUT => REG1_ULA_A, ENABLE => Habilita_A, CLK => CLK, RST => '0');
+
 
 -- O port map completo do Program Counter.
 PC : entity work.registradorGenerico   generic map (larguraDados => 9)

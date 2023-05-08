@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Sat May 06 21:11:01 2023
+Sun May 07 22:47:59 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -96,13 +96,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 06 21:11:01 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sun May 07 22:47:59 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogio                                     ;
 ; Top-level Entity Name           ; Relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 623                                         ;
+; Total registers                 ; 647                                         ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -209,49 +209,47 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                    ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------+---------+
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/ULASomaSub.vhd                  ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/somaConstante.vhd               ;         ;
-; Relogio.vhd                      ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd                     ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/registradorGenerico.vhd         ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd              ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd              ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaROM.vhd                  ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaRAM.vhd                  ;         ;
-; logicoDesvio.vhd                 ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/logicoDesvio.vhd                ;         ;
-; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/flipflop.vhd                    ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/edgeDetector.vhd                ;         ;
-; display.vhd                      ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/display.vhd                     ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoderInstru.vhd               ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoder3x8.vhd                  ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd                         ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/conversorHex7Seg.vhd            ;         ;
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/buffer_3_state_8portas.vhd      ;         ;
-; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd ;         ;
-; divisorGenerico.vhd              ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico.vhd             ;         ;
-; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd ;         ;
-; muxVelocidade.vhd                ; yes             ; User VHDL File  ; C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxVelocidade.vhd               ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/ULASomaSub.vhd                  ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/somaConstante.vhd               ;         ;
+; Relogio.vhd                      ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd                     ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/registradorGenerico.vhd         ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd              ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaROM.vhd                  ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaRAM.vhd                  ;         ;
+; logicoDesvio.vhd                 ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/logicoDesvio.vhd                ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/flipflop.vhd                    ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/edgeDetector.vhd                ;         ;
+; display.vhd                      ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/display.vhd                     ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoderInstru.vhd               ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoder3x8.vhd                  ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd                         ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/conversorHex7Seg.vhd            ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/buffer_3_state_8portas.vhd      ;         ;
+; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico.vhd             ;         ;
+; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd ;         ;
+; muxVelocidade.vhd                ; yes             ; User VHDL File  ; C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxVelocidade.vhd               ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -259,25 +257,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 508            ;
+; Estimate of Logic utilization (ALMs needed) ; 526            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 559            ;
+; Combinational ALUT usage for logic          ; 584            ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 312            ;
-;     -- 5 input functions                    ; 53             ;
-;     -- 4 input functions                    ; 58             ;
-;     -- <=3 input functions                  ; 136            ;
+;     -- 6 input functions                    ; 327            ;
+;     -- 5 input functions                    ; 55             ;
+;     -- 4 input functions                    ; 61             ;
+;     -- <=3 input functions                  ; 141            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 623            ;
+; Dedicated logic registers                   ; 647            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 68             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 618            ;
-; Total fan-out                               ; 4635           ;
-; Average fan-out                             ; 3.52           ;
+; Maximum fan-out                             ; 642            ;
+; Total fan-out                               ; 4881           ;
+; Average fan-out                             ; 3.57           ;
 +---------------------------------------------+----------------+
 
 
@@ -286,10 +284,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name                 ; Library Name ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |Relogio                                            ; 559 (15)            ; 623 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Relogio                                                                             ; Relogio                     ; work         ;
-;    |CPU:CPU|                                        ; 62 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU                                                                     ; CPU                         ; work         ;
+; |Relogio                                            ; 584 (15)            ; 647 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Relogio                                                                             ; Relogio                     ; work         ;
+;    |CPU:CPU|                                        ; 74 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU                                                                     ; CPU                         ; work         ;
 ;       |ULASomaSub:ULA1|                             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|ULASomaSub:ULA1                                                     ; ULASomaSub                  ; work         ;
-;       |bancoRegistradoresArqRegMem:RegMem|          ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|bancoRegistradoresArqRegMem:RegMem                                  ; bancoRegistradoresArqRegMem ; work         ;
+;       |bancoRegistradoresArqRegMem:RegMem|          ; 12 (12)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|bancoRegistradoresArqRegMem:RegMem                                  ; bancoRegistradoresArqRegMem ; work         ;
 ;       |decoderInstru:DEC_INSTRUCAO|                 ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|decoderInstru:DEC_INSTRUCAO                                         ; decoderInstru               ; work         ;
 ;       |flipflop:FLAG_IGUAL|                         ; 9 (9)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|flipflop:FLAG_IGUAL                                                 ; flipflop                    ; work         ;
 ;       |logicoDesvio:DESVIO|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|CPU:CPU|logicoDesvio:DESVIO                                                 ; logicoDesvio                ; work         ;
@@ -327,7 +325,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |flipflop:ff_debounce2|                          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|flipflop:ff_debounce2                                                       ; flipflop                    ; work         ;
 ;    |flipflop:ff_debounce3|                          ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|flipflop:ff_debounce3                                                       ; flipflop                    ; work         ;
 ;    |memoriaRAM:RAM1|                                ; 299 (299)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Relogio|memoriaRAM:RAM1                                                             ; memoriaRAM                  ; work         ;
-;    |memoriaROM:ROM1|                                ; 71 (71)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|memoriaROM:ROM1                                                             ; memoriaROM                  ; work         ;
+;    |memoriaROM:ROM1|                                ; 84 (84)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|memoriaROM:ROM1                                                             ; memoriaROM                  ; work         ;
 ;    |registradorGenerico:REG8|                       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Relogio|registradorGenerico:REG8                                                    ; registradorGenerico         ; work         ;
 +-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -338,12 +336,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 623   ;
+; Total registers                              ; 647   ;
 ; Number of registers using Synchronous Clear  ; 40    ;
-; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 561   ;
+; Number of registers using Clock Enable       ; 585   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -877,28 +875,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 623                         ;
+; arriav_ff             ; 647                         ;
 ;     CLR               ; 5                           ;
 ;     ENA               ; 553                         ;
-;     ENA SLD           ; 8                           ;
+;     ENA SLD           ; 32                          ;
 ;     SCLR              ; 40                          ;
 ;     plain             ; 17                          ;
-; arriav_lcell_comb     ; 559                         ;
+; arriav_lcell_comb     ; 584                         ;
 ;     arith             ; 58                          ;
 ;         1 data inputs ; 49                          ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 8                           ;
-;     normal            ; 501                         ;
+;     normal            ; 526                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 57                          ;
-;         5 data inputs ; 45                          ;
-;         6 data inputs ; 312                         ;
+;         2 data inputs ; 76                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 60                          ;
+;         5 data inputs ; 47                          ;
+;         6 data inputs ; 327                         ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 6.44                        ;
+; Average LUT depth     ; 6.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -917,145 +915,145 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat May 06 21:10:48 2023
+    Info: Processing started: Sun May 07 22:47:45 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/ULASomaSub.vhd Line: 5
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/ULASomaSub.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/somaConstante.vhd Line: 5
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/somaConstante.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
-    Info (12022): Found design unit 1: Relogio-arquitetura File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 21
-    Info (12023): Found entity 1: Relogio File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 4
+    Info (12022): Found design unit 1: Relogio-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 21
+    Info (12023): Found entity 1: Relogio File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/registradorGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/registradorGenerico.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaROM.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaROM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaRAM.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaRAM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaRAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logicodesvio.vhd
-    Info (12022): Found design unit 1: logicoDesvio-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/logicoDesvio.vhd Line: 15
-    Info (12023): Found entity 1: logicoDesvio File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/logicoDesvio.vhd Line: 4
+    Info (12022): Found design unit 1: logicoDesvio-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/logicoDesvio.vhd Line: 15
+    Info (12023): Found entity 1: logicoDesvio File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/logicoDesvio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
-    Info (12022): Found design unit 1: flipflop-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/flipflop.vhd Line: 12
-    Info (12023): Found entity 1: flipflop File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/flipflop.vhd Line: 4
+    Info (12022): Found design unit 1: flipflop-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/flipflop.vhd Line: 12
+    Info (12023): Found entity 1: flipflop File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/flipflop.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file display.vhd
-    Info (12022): Found design unit 1: display-arquitetura File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/display.vhd Line: 18
-    Info (12023): Found entity 1: display File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/display.vhd Line: 4
+    Info (12022): Found design unit 1: display-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/display.vhd Line: 18
+    Info (12023): Found entity 1: display File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/display.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoderInstru.vhd Line: 12
-    Info (12023): Found entity 1: decoderInstru File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoderInstru.vhd Line: 4
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoderInstru.vhd Line: 12
+    Info (12023): Found entity 1: decoderInstru File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoderInstru.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/decoder3x8.vhd Line: 4
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/decoder3x8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 19
-    Info (12023): Found entity 1: CPU File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 4
+    Info (12022): Found design unit 1: CPU-arquitetura File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 19
+    Info (12023): Found entity 1: CPU File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/buffer_3_state_8portas.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/buffer_3_state_8portas.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/buffer_3_state_8portas.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file bancoregistradoresarqregmem.vhd
-    Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 23
-    Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 5
+    Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 23
+    Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: divisorGenerico File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico.vhd Line: 5
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico_e_interface.vhd
-    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 15
-    Info (12023): Found entity 1: divisorGenerico_e_Interface File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 5
+    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico_e_Interface File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file muxvelocidade.vhd
-    Info (12022): Found design unit 1: muxVelocidade-comportamento File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxVelocidade.vhd Line: 13
-    Info (12023): Found entity 1: muxVelocidade File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxVelocidade.vhd Line: 4
+    Info (12022): Found design unit 1: muxVelocidade-comportamento File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxVelocidade.vhd Line: 13
+    Info (12023): Found entity 1: muxVelocidade File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxVelocidade.vhd Line: 4
 Info (12127): Elaborating entity "relogio" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Relogio.vhd(51): object "hab_sw9" assigned a value but never read File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 51
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 93
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC1" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 96
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 102
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 106
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 65
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 76
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 79
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 84
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC_INSTRUCAO" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 89
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_PC" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 93
-Info (10041): Inferred latch for "saida_MUX[0]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[1]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[2]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[3]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[4]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[5]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[6]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[7]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (10041): Inferred latch for "saida_MUX[8]" at muxGenerico4x1.vhd(16) File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Info (12128): Elaborating entity "flipflop" for hierarchy "CPU:CPU|flipflop:FLAG_IGUAL" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 101
-Info (12128): Elaborating entity "logicoDesvio" for hierarchy "CPU:CPU|logicoDesvio:DESVIO" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 103
-Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "CPU:CPU|bancoRegistradoresArqRegMem:RegMem" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/CPU.vhd Line: 110
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG8" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 115
-Info (12128): Elaborating entity "display" for hierarchy "display:display" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 119
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "display:display|registradorGenerico:REG0" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/display.vhd Line: 44
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "display:display|conversorHex7Seg:display0" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/display.vhd Line: 48
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:sw0a7" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 127
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:debounce1" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 158
-Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 179
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 24
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseRapido" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 29
-Info (12128): Elaborating entity "muxVelocidade" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|muxVelocidade:mux_Velocidade" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 34
+Warning (10036): Verilog HDL or VHDL warning at Relogio.vhd(51): object "hab_sw9" assigned a value but never read File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 51
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 93
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DEC1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 96
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 102
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 106
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 65
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 74
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 77
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 82
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC_INSTRUCAO" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 87
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_PC" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 91
+Info (10041): Inferred latch for "saida_MUX[0]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[1]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[2]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[3]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[4]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[5]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[6]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[7]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (10041): Inferred latch for "saida_MUX[8]" at muxGenerico4x1.vhd(16) File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Info (12128): Elaborating entity "flipflop" for hierarchy "CPU:CPU|flipflop:FLAG_IGUAL" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 99
+Info (12128): Elaborating entity "logicoDesvio" for hierarchy "CPU:CPU|logicoDesvio:DESVIO" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 101
+Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "CPU:CPU|bancoRegistradoresArqRegMem:RegMem" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/CPU.vhd Line: 108
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG8" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 115
+Info (12128): Elaborating entity "display" for hierarchy "display:display" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 119
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "display:display|registradorGenerico:REG0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/display.vhd Line: 44
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "display:display|conversorHex7Seg:display0" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/display.vhd Line: 48
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:sw0a7" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 127
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:debounce1" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 158
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 179
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 24
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseRapido" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 29
+Info (12128): Elaborating entity "muxVelocidade" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|muxVelocidade:mux_Velocidade" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 34
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer divisorGenerico_e_Interface:interfaceBaseTempo|muxVelocidade:mux_Velocidade|saida_MUX File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxVelocidade.vhd Line: 9
+    Warning (19017): Found clock multiplexer divisorGenerico_e_Interface:interfaceBaseTempo|muxVelocidade:mux_Velocidade|saida_MUX File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxVelocidade.vhd Line: 9
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "CPU:CPU|bancoRegistradoresArqRegMem:RegMem|registrador" is uninferred due to inappropriate RAM size File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 29
-    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/memoriaRAM.vhd Line: 27
+    Info (276004): RAM logic "CPU:CPU|bancoRegistradoresArqRegMem:RegMem|registrador" is uninferred due to inappropriate RAM size File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/bancoRegistradoresArqRegMem.vhd Line: 29
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "saida_RAM[7]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[6]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[5]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[4]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[3]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[2]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[1]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "saida_RAM[0]" into a selector File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
-    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:interfaceBaseTempo|leituraUmSegundo" feeding internal logic into a wire File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 10
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[0]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[1]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[2]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[3]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[4]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[5]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[6]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[7]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
-Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[8]" is permanently enabled File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+    Warning (13048): Converted tri-state node "saida_RAM[7]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[6]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[5]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[4]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[3]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[2]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[1]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "saida_RAM[0]" into a selector File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13049): Converted tri-state buffer "divisorGenerico_e_Interface:interfaceBaseTempo|leituraUmSegundo" feeding internal logic into a wire File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/divisorGenerico_e_Interface.vhd Line: 10
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[0]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[1]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[2]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[3]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[4]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[5]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[6]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[7]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
+Warning (14026): LATCH primitive "CPU:CPU|muxGenerico4x1:MUX_PC|saida_MUX[8]" is permanently enabled File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/muxGenerico4x1.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/cesar/OneDrive/Desktop/Insper/6 Semestre/DesComp/Proj-Contador/Relógio/Relogio.vhd Line: 12
-Info (21057): Implemented 1193 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/nishi/OneDrive/Documentos/DESCOMP/Proj-Contador/Relógio/Relogio.vhd Line: 12
+Info (21057): Implemented 1242 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1125 logic cells
+    Info (21061): Implemented 1174 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4871 megabytes
-    Info: Processing ended: Sat May 06 21:11:01 2023
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Sun May 07 22:47:59 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 
